@@ -885,6 +885,10 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 .arrow.ok-a.r::after{border-left-color:#12A877}
 .arrow.ok-a .lbl{color:#0B6B4C}
 
+/* Slide 77 · les sources apparaissent avec les deux études (METR puis DORA) */
+.src-after{opacity:0;transition:opacity .4s ease}
+.slide:has(.dora-card.visible) .src-after{opacity:1}
+
 </style>
 </head>
 <body>
@@ -3300,7 +3304,7 @@ src/pricing/PriceCalculator.ts:14:20
         <p style="font-size:24px;margin:10px 0 0;line-height:1.4">16 développeurs expérimentés, 246 vraies tâches : <b>19 % plus lents</b> avec l'IA… alors qu'ils s'estimaient <b>20 % plus rapides</b>.</p>
         <p style="font-size:18px;color:var(--texte-doux);margin:10px 0 0">Résultat daté, que METR présente désormais comme historique : les outils ont progressé. La leçon reste : le ressenti ne mesure rien.</p>
       </div>
-      <div class="card step" style="padding:24px 28px;border-color:var(--bleu)">
+      <div class="card step dora-card" style="padding:24px 28px;border-color:var(--bleu)">
         <div class="kicker" style="color:var(--bleu);font-size:19px">Un amplificateur · DORA, 2025</div>
         <p style="font-size:24px;margin:10px 0 0;line-height:1.4">L'IA augmente le débit de livraison… <b>et aussi l'instabilité</b>. Elle amplifie les forces d'une équipe, et ses faiblesses.</p>
       </div>
@@ -3318,7 +3322,7 @@ src/pricing/PriceCalculator.ts:14:20
       <p style="font-size:21px;margin:16px 0 0"><b>Un exercice de 8 minutes ne prouve rien</b> : mesurez sur vos vrais tickets, pas sur une démo.</p>
     </div>
   </div>
-  <p class="disclaimer" style="margin-top:14px;text-align:left">Sources : METR, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) et mise à jour de février 2026 · DORA, « State of AI-assisted Software Development » (2025).</p>
+  <p class="disclaimer src-after" style="margin-top:14px;text-align:left">Sources : METR, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) et mise à jour de février 2026 · DORA, « State of AI-assisted Software Development » (2025).</p>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="16:56">16h56</time> · 5 min</p>
     <p>Un exercice de huit minutes qui se passe bien, c'est encourageant, mais ça ne prouve rien sur votre quotidien. Pour savoir si Ada vous fait vraiment gagner du temps, il faut mesurer. Pourquoi ? Parce que le ressenti trompe. En 2025, l'organisme de recherche METR a fait travailler seize développeurs expérimentés sur deux cent quarante-six vraies tâches de leurs propres projets, avec ou sans IA, tiré au sort. Résultat : dix-neuf pour cent plus lents avec l'IA. Et après coup, ils s'estimaient vingt pour cent plus rapides.</p>
