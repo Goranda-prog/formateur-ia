@@ -885,6 +885,10 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 .arrow.ok-a.r::after{border-left-color:#12A877}
 .arrow.ok-a .lbl{color:#0B6B4C}
 
+/* Slide 77 · les sources apparaissent avec les deux études (METR puis DORA) */
+.src-after{opacity:0;transition:opacity .4s ease}
+.slide:has(.dora-card.visible) .src-after{opacity:1}
+
 </style>
 </head>
 <body>
@@ -2574,15 +2578,15 @@ Config proposée par votre collègue :
   </div>
   <div class="grid3" style="margin-top:22px;gap:22px">
     <div class="tip step" style="padding:16px 20px"><div class="ti">🎯</div><div><b style="font-size:23px">Dites-lui où chercher</b><span style="font-size:19px">« Commence par <code>src/booking/</code> » : moins de fouille, un bureau moins encombré.</span></div></div>
-    <div class="tip step" style="padding:16px 20px"><div class="ti">🔒</div><div><b style="font-size:23px">Indexer, c'est envoyer</b><span style="font-size:19px">Des chunks de code partent chez le fournisseur d'embeddings. Ollama + LanceDB : tout reste sur le poste.</span></div></div>
+    <div class="tip step" style="padding:16px 20px"><div class="ti">🔒</div><div><b style="font-size:23px">Indexer, c'est envoyer</b><span style="font-size:19px">Un fournisseur d'embeddings implique un stockage vectoriel, donc l'envoi de votre code. Certains clients de Néosoft y sont réticents : vérifiez avant d'activer.</span></div></div>
     <div class="tip step" style="padding:16px 20px"><div class="ti">🔌</div><div><b style="font-size:23px">Votre doc interne ?</b><span style="font-size:19px">Un petit serveur MCP <code>search_docs</code> devant votre base, et Ada l'interroge depuis l'IDE.</span></div></div>
   </div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="15:02">15h02</time> · 4 min</p>
     <p>Tout à l'heure, on a rempli la bibliothèque d'Ada dans NéoGen. Dans l'IDE, maintenant qu'elle a des outils, elle va chercher elle-même. Il y a quatre façons de lui faire trouver la bonne information.</p>
     <p>Un : le contexte explicite, avec @. C'est le plus fiable : si vous savez où c'est, dites-le. Deux : la recherche lexicale, comme vous avec grep : elle cherche un nom exact, puis elle lit le fichier. C'est son réflexe par défaut, et c'est très bien quand vous connaissez un nom de classe ou un code d'erreur. Mais grep ne connaît pas les synonymes. Trois : la recherche sémantique, avec l'indexation du code. C'est exactement le RAG de ce matin, appliqué à votre dépôt : Kilo découpe le code en chunks par fonctions et par classes, grâce à l'AST, les vectorise, et donne à Ada un outil semantic_search. Utile quand vous ne savez pas comment la chose s'appelle. Quatre : la doc à jour des librairies, avec Context7, qu'on vient de brancher. C'est aussi un RAG, servi par un MCP.</p>
-    <p>Trois astuces. Dites-lui où chercher : ça lui évite de vider la moitié du dépôt sur son bureau. Indexer, c'est envoyer : des chunks de code partent chez le fournisseur d'embeddings, sauf si tout tourne en local. Et pour votre doc interne, l'architecture qui marche bien : un petit serveur MCP devant votre base de connaissances, avec un outil search_docs. Ada interroge la doc de l'équipe sans quitter l'IDE.</p>
-    <p class="me">→ Si tu as une minute : dans ton workspace, demande à l'agent ask « Où est géré le calcul de la remise ? » et montre dans le fil qu'il lance des recherches texte (grep, glob) avant de lire. L'indexation n'est pas activée dans les workspaces : ne la montre pas en direct. Dans Kilo, le découpage du code se fait localement avec Tree-sitter ; le stockage par défaut est LanceDB, en fichiers locaux. Vérifie le nom exact des menus dans ta version de Kilo.</p>
+    <p>Trois astuces. Dites-lui où chercher : ça lui évite de vider la moitié du dépôt sur son bureau. Indexer, c'est envoyer : passer par un fournisseur d'embeddings implique un stockage vectoriel, et donc l'envoi de chunks de votre code. Certains de nos clients sont frileux là-dessus : vérifiez ce que le contrat et le client autorisent avant d'activer l'indexation sur leur code. Et pour votre doc interne, l'architecture qui marche bien : un petit serveur MCP devant votre base de connaissances, avec un outil search_docs. Ada interroge la doc de l'équipe sans quitter l'IDE.</p>
+    <p class="me">→ Si tu as une minute : dans ton workspace, demande à l'agent ask « Où est géré le calcul de la remise ? » et montre dans le fil qu'il lance des recherches texte (grep, glob) avant de lire. L'indexation n'est pas activée dans les workspaces : ne la montre pas en direct. Dans Kilo, le découpage du code se fait localement avec Tree-sitter. Vérifie le nom exact des menus dans ta version de Kilo.</p>
   </aside>
 </section>
 
@@ -2973,8 +2977,7 @@ déjà réservée sur une partie du créneau.
 - [ ] Les tests échouent si je casse le code
 - [ ] Dépendances ajoutées : existence et
       éditeur vérifiés
-- [ ] API et options vérifiées dans la doc</div></div>
-      <p style="font-size:17px;color:var(--texte-doux);margin:0">GitLab : <code>.gitlab/merge_request_templates/Default.md</code></p>
+- [ ] API et options vérifiées dans la doc</div><p style="font-size:17px;color:var(--texte-doux);margin:10px 0 0">GitLab : <code>.gitlab/merge_request_templates/Default.md</code></p></div>
       <div class="tip step" style="padding:14px 18px;background:#EEF3FF"><div class="ti">🤖</div><div><b style="font-size:23px">Ada remplit, vous signez</b><span style="font-size:19.5px">« Rédige la description de PR selon ce template, à partir de git diff main. »</span></div></div>
     </div>
   </div>
@@ -3301,7 +3304,7 @@ src/pricing/PriceCalculator.ts:14:20
         <p style="font-size:24px;margin:10px 0 0;line-height:1.4">16 développeurs expérimentés, 246 vraies tâches : <b>19 % plus lents</b> avec l'IA… alors qu'ils s'estimaient <b>20 % plus rapides</b>.</p>
         <p style="font-size:18px;color:var(--texte-doux);margin:10px 0 0">Résultat daté, que METR présente désormais comme historique : les outils ont progressé. La leçon reste : le ressenti ne mesure rien.</p>
       </div>
-      <div class="card step" style="padding:24px 28px;border-color:var(--bleu)">
+      <div class="card step dora-card" style="padding:24px 28px;border-color:var(--bleu)">
         <div class="kicker" style="color:var(--bleu);font-size:19px">Un amplificateur · DORA, 2025</div>
         <p style="font-size:24px;margin:10px 0 0;line-height:1.4">L'IA augmente le débit de livraison… <b>et aussi l'instabilité</b>. Elle amplifie les forces d'une équipe, et ses faiblesses.</p>
       </div>
@@ -3319,7 +3322,7 @@ src/pricing/PriceCalculator.ts:14:20
       <p style="font-size:21px;margin:16px 0 0"><b>Un exercice de 8 minutes ne prouve rien</b> : mesurez sur vos vrais tickets, pas sur une démo.</p>
     </div>
   </div>
-  <p class="disclaimer" style="margin-top:14px;text-align:left">Sources : METR, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) et mise à jour de février 2026 · DORA, « State of AI-assisted Software Development » (2025).</p>
+  <p class="disclaimer src-after" style="margin-top:14px;text-align:left">Sources : METR, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) et mise à jour de février 2026 · DORA, « State of AI-assisted Software Development » (2025).</p>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="16:56">16h56</time> · 5 min</p>
     <p>Un exercice de huit minutes qui se passe bien, c'est encourageant, mais ça ne prouve rien sur votre quotidien. Pour savoir si Ada vous fait vraiment gagner du temps, il faut mesurer. Pourquoi ? Parce que le ressenti trompe. En 2025, l'organisme de recherche METR a fait travailler seize développeurs expérimentés sur deux cent quarante-six vraies tâches de leurs propres projets, avec ou sans IA, tiré au sort. Résultat : dix-neuf pour cent plus lents avec l'IA. Et après coup, ils s'estimaient vingt pour cent plus rapides.</p>
@@ -3461,13 +3464,15 @@ Base de connaissances
 </section>
 
 <!-- ============ 89 · CLÔTURE ============ -->
-<section class="slide section" data-title="Fin de période d'essai : validée" data-module="Étape 7 · Fin de période d'essai" data-nochrome>
-  <div class="sec-bar"></div>
-  <div class="sec-body" style="max-width:1300px">
+<section class="slide dark" data-title="Fin de période d'essai : validée" data-module="Étape 7 · Fin de période d'essai">
+  <div style="max-width:1400px">
     <div class="kicker">Fin de période d'essai</div>
-    <h2>Ada est confirmée dans l'équipe.</h2>
-    <p>À une condition : vous restez son manager. Merci pour cette journée !</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:44px"><span class="chip ghost" style="font-size:24px;padding:12px 24px">📝 Votre avis : le questionnaire d'évaluation (lien dans le chat)</span><span class="chip ghost" style="font-size:24px;padding:12px 24px">📎 Le support vous sera partagé</span></div>
+    <h2 style="font-size:80px;font-weight:900;margin-top:14px;line-height:1.08">Ada est confirmée dans l'équipe.</h2>
+    <p style="font-size:28px;color:#C9D3F2;margin-top:24px">À une condition : vous restez son manager. Merci pour cette journée !</p>
+    <div class="row" style="gap:16px;flex-wrap:wrap;margin-top:26px">
+      <span class="chip ghost" style="font-size:24px;padding:14px 24px">📝 Votre avis : le questionnaire d'évaluation (lien dans le chat)</span>
+      <span class="chip ghost" style="font-size:24px;padding:14px 24px">📎 Le support vous sera partagé</span>
+    </div>
   </div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="17:20">17h20</time> · 5 min</p>
