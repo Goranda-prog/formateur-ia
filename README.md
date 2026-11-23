@@ -46,6 +46,19 @@ Dans Teams, partagez uniquement la fenêtre du diaporama : la vue présentateur 
 | 6 | 16h36 | Ada fait des bêtises : débogage, mutation testing, workflow d'équipe |
 | 7 | 16h56 | Fin de période d'essai : mesure, Kahoot, boîte à prompts |
 
+## Ressources interactives
+
+Six pages autonomes à partager aux participants ou à projeter, dans le dossier `ressources/`. Comme le diaporama, chacune tient en un seul fichier HTML, polices comprises : elle s'ouvre dans Chrome ou Edge et fonctionne sans connexion.
+
+| Fichier | Contenu |
+| --- | --- |
+| `1-dans-la-tete-d-une-ia.html` | Dans la tête d'une IA : prédire le mot suivant, vecteurs, attention, couches, entraînement. |
+| `2-les-tokens-en-briques.html` | Les tokens, en briques : découpage en direct, coût entrée/sortie et relecture de l'historique. |
+| `3-comment-une-ia-apprend.html` | Comment une IA apprend : erreur, gradient, descente, rétropropagation et surapprentissage. |
+| `4-comprendre-le-rag.html` | Comprendre le RAG : analogies, pipeline en 6 étapes, démo de recherche avec et sans RAG, quiz. |
+| `5-comprendre-mcp.html` | Comprendre MCP : le Model Context Protocol suivi pas à pas sur « Dois-je prendre un parapluie demain ? ». |
+| `6-workflow-spec-driven-development.html` | Workflow Spec Driven Development : les 6 étapes avec exemples PHP, 10 prompts prêts à copier et le déroulé de l'atelier en binômes. |
+
 ## Données enregistrées
 
 Les équipes, les scores, les PIN Kahoot et l'heure de début sont enregistrés dans le navigateur, sur le poste utilisé. Présentez toujours depuis le même navigateur et ne videz pas ses données entre deux sessions.
