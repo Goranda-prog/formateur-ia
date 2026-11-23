@@ -46,6 +46,31 @@ Dans Teams, partagez uniquement la fenêtre du diaporama : la vue présentateur 
 | 6 | 16h36 | Ada fait des bêtises : débogage, mutation testing, workflow d'équipe |
 | 7 | 16h56 | Fin de période d'essai : mesure, Kahoot, boîte à prompts |
 
+## Ressources interactives
+
+Six pages autonomes à partager aux participants ou à projeter, dans le dossier `ressources/`. Comme le diaporama, chacune tient en un seul fichier HTML, polices comprises : elle s'ouvre dans Chrome ou Edge et fonctionne sans connexion.
+
+| Fichier | Contenu |
+| --- | --- |
+| `1-dans-la-tete-d-une-ia.html` | Dans la tête d'une IA : prédire le mot suivant, vecteurs, attention, couches, entraînement. |
+| `2-les-tokens-en-briques.html` | Les tokens, en briques : découpage en direct, coût entrée/sortie et relecture de l'historique. |
+| `3-comment-une-ia-apprend.html` | Comment une IA apprend : erreur, gradient, descente, rétropropagation et surapprentissage. |
+| `4-comprendre-le-rag.html` | Comprendre le RAG : analogies, pipeline en 6 étapes, démo de recherche avec et sans RAG, quiz. |
+| `5-comprendre-mcp.html` | Comprendre MCP : le Model Context Protocol suivi pas à pas sur « Dois-je prendre un parapluie demain ? ». |
+| `6-workflow-spec-driven-development.html` | Workflow Spec Driven Development : les 6 étapes avec exemples PHP, 10 prompts prêts à copier et le déroulé de l'atelier en binômes. |
+
+## Démo RAG
+
+Le dossier `demo-rag/` contient les trois documents de la Boutique (exemple de formation) utilisés pendant la démo « Une base de connaissances dans NéoGen » (étape 3) :
+
+| Fichier | Contenu |
+| --- | --- |
+| `conditions-de-vente.md` | Prix, remise automatique, code BIENVENUE, cumul des réductions, cartes cadeaux, frais de port, retours. |
+| `faq-service-client.md` | Questions fréquentes du service client : codes promo, livraison, retours, fidélité. |
+| `livret-equipe-boutique.md` | Livret d'accueil de l'équipe Boutique : vie au bureau, façon de travailler, règles de code. Sert aussi de source à l'exercice 2 (AGENTS.md). |
+
+Pour la démo : créez une base de connaissances dans NéoGen, ajoutez les trois fichiers, attendez la fin de l'indexation, puis posez la question « Un client peut-il cumuler BIENVENUE et la remise de 10 % ? ».
+
 ## Données enregistrées
 
 Les équipes, les scores, les PIN Kahoot et l'heure de début sont enregistrés dans le navigateur, sur le poste utilisé. Présentez toujours depuis le même navigateur et ne videz pas ses données entre deux sessions.
