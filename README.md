@@ -59,6 +59,18 @@ Six pages autonomes à partager aux participants ou à projeter, dans le dossier
 | `5-comprendre-mcp.html` | Comprendre MCP : le Model Context Protocol suivi pas à pas sur « Dois-je prendre un parapluie demain ? ». |
 | `6-workflow-spec-driven-development.html` | Workflow Spec Driven Development : les 6 étapes avec exemples PHP, 10 prompts prêts à copier et le déroulé de l'atelier en binômes. |
 
+## Démo RAG
+
+Le dossier `demo-rag/` contient les trois documents de la Boutique (exemple de formation) utilisés pendant la démo « Une base de connaissances dans NéoGen » (étape 3) :
+
+| Fichier | Contenu |
+| --- | --- |
+| `conditions-de-vente.md` | Prix, remise automatique, code BIENVENUE, cumul des réductions, cartes cadeaux, frais de port, retours. |
+| `faq-service-client.md` | Questions fréquentes du service client : codes promo, livraison, retours, fidélité. |
+| `livret-equipe-boutique.md` | Livret d'accueil de l'équipe Boutique : vie au bureau, façon de travailler, règles de code. Sert aussi de source à l'exercice 2 (AGENTS.md). |
+
+Pour la démo : créez une base de connaissances dans NéoGen, ajoutez les trois fichiers, attendez la fin de l'indexation, puis posez la question « Un client peut-il cumuler BIENVENUE et la remise de 10 % ? ».
+
 ## Données enregistrées
 
 Les équipes, les scores, les PIN Kahoot et l'heure de début sont enregistrés dans le navigateur, sur le poste utilisé. Présentez toujours depuis le même navigateur et ne videz pas ses données entre deux sessions.
