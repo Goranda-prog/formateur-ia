@@ -59,6 +59,10 @@ Chaque script prend en option un fichier d'entrée et un fichier de sortie, par 
 
 À la première exécution, `generer-pdf.sh` installe `playwright-core`, le pilote qui commande votre Chrome ou Edge ; aucun navigateur n'est téléchargé. Si votre navigateur est installé ailleurs : `CHROME_PATH="/chemin/vers/chrome" ./scripts/generer-pdf.sh`.
 
+## Kit d'arrivée des participants
+
+`kit-arrivee-kilo-code-neogen.md` est à envoyer aux participants avant la formation : en 5 étapes (20 minutes), ils installent Kilo Code dans le VS Code de leur workspace Coder et le branchent sur NéoGen. Avant l'envoi, remplacez `ADRESSE-NEOGEN` par l'adresse de NéoGen et complétez **CONTACT DU FORMATEUR**.
+
 ## Ressources interactives
 
 Six pages autonomes à partager aux participants ou à projeter, dans le dossier `ressources/`. Comme le diaporama, chacune tient en un seul fichier HTML, polices comprises : elle s'ouvre dans Chrome ou Edge et fonctionne sans connexion.
