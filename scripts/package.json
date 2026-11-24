@@ -1,0 +1,12 @@
+{
+  "name": "formateur-ia-scripts",
+  "private": true,
+  "description": "Scripts de génération du PDF et de la version stagiaires du diaporama",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "playwright-core": "1.65.1"
+  }
+}

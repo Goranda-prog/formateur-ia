@@ -1,0 +1,5 @@
+# Fichiers générés par les scripts
+dist/
+
+# Dépendances des scripts
+scripts/node_modules/

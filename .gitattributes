@@ -1,0 +1,2 @@
+# Les scripts bash gardent des fins de ligne LF, même sous Windows (Git Bash)
+*.sh text eol=lf

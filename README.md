@@ -46,6 +46,19 @@ Dans Teams, partagez uniquement la fenêtre du diaporama : la vue présentateur 
 | 6 | 16h36 | Ada fait des bêtises : débogage, mutation testing, workflow d'équipe |
 | 7 | 16h56 | Fin de période d'essai : mesure, Kahoot, boîte à prompts |
 
+## Générer le PDF et la version stagiaires
+
+Deux scripts bash, dans `scripts/`. Ils écrivent dans `dist/` (non versionné). Sous Windows, lancez-les depuis Git Bash.
+
+| Script | Résultat | Prérequis |
+| --- | --- | --- |
+| `./scripts/generer-pdf.sh` | `dist/IA-Software-Engineer-diapo.pdf` : une page par slide, toutes les étapes affichées, une page par onglet sur les slides à onglets, sans les notes du formateur. Texte sélectionnable. | Node.js 18+ et Google Chrome ou Microsoft Edge |
+| `./scripts/generer-version-stagiaires.sh` | `dist/IA-Software-Engineer-stagiaires.html` : le diaporama interactif (votes, onglets, chronos, boutons Copier), sans les notes du formateur ni la vue présentateur. Fonctionne sans connexion. | Node.js 18+ |
+
+Chaque script prend en option un fichier d'entrée et un fichier de sortie, par exemple `./scripts/generer-pdf.sh index.html support.pdf`.
+
+À la première exécution, `generer-pdf.sh` installe `playwright-core`, le pilote qui commande votre Chrome ou Edge ; aucun navigateur n'est téléchargé. Si votre navigateur est installé ailleurs : `CHROME_PATH="/chemin/vers/chrome" ./scripts/generer-pdf.sh`.
+
 ## Ressources interactives
 
 Six pages autonomes à partager aux participants ou à projeter, dans le dossier `ressources/`. Comme le diaporama, chacune tient en un seul fichier HTML, polices comprises : elle s'ouvre dans Chrome ou Edge et fonctionne sans connexion.
