@@ -33,18 +33,18 @@ Dans Teams, partagez uniquement la fenêtre du diaporama : la vue présentateur 
 
 ## Déroulé de la journée
 
-9h30 – 12h00 et 13h30 – 17h30, avec une pause à 11h05 et une autre à 15h20. Si la journée commence à une autre heure, changez l'heure de début dans le Sommaire (O) : tous les repères se décalent.
+9h30 – 12h00 et 13h30 – 17h30, avec une pause à 11h05 et une autre à 15h25. Si la journée commence à une autre heure, changez l'heure de début dans le Sommaire (O) : tous les repères se décalent.
 
 | Étape | Heure | Contenu |
 | --- | --- | --- |
 | 0 | 9h30 | Accueil |
-| 1 | 9h46 | Dans la tête d'Ada : tokens, température, contexte |
-| 2 | 10h02 | Parler à Ada : prompts, techniques avancées · Exercice 1 |
-| 3 | 11h15 | Ada à son poste : Kilo Code, AGENTS.md, Skills, RAG · Exercice 2 (après le déjeuner) |
-| 4 | 14h28 | Les outils d'Ada : MCP, RAG dans l'IDE · Exercice 3 |
-| 5 | 15h30 | Travailler avec Ada : cycle complet, Git, Memory Bank · Exercice 4 |
-| 6 | 16h36 | Ada fait des bêtises : débogage, mutation testing, workflow d'équipe |
-| 7 | 16h56 | Fin de période d'essai : mesure, Kahoot, boîte à prompts |
+| 1 | 9h45 | Dans la tête d'Ada : tokens, température, contexte |
+| 2 | 10h00 | Parler à Ada : prompts, techniques avancées · Exercice 1 |
+| 3 | 11h15 | Ada à son poste : Kilo Code (installation en séance), AGENTS.md, Skills, RAG · Exercice 2 (après le déjeuner) |
+| 4 | 14h30 | Les outils d'Ada : MCP, RAG dans l'IDE · Exercice 3 |
+| 5 | 15h35 | Travailler avec Ada : cycle complet, Git, Memory Bank · Exercice 4 |
+| 6 | 16h40 | Ada fait des bêtises : débogage, mutation testing, workflow d'équipe |
+| 7 | 17h00 | Fin de période d'essai : mesure, Kahoot, boîte à prompts |
 
 ## Générer le PDF et la version stagiaires
 
@@ -61,7 +61,7 @@ Chaque script prend en option un fichier d'entrée et un fichier de sortie, par 
 
 ## Kit d'arrivée des participants
 
-`kit-arrivee-kilo-code-neogen.md` est à envoyer aux participants avant la formation : en 5 étapes (20 minutes), ils installent Kilo Code dans le VS Code de leur workspace Coder et le branchent sur NéoGen. Avant l'envoi, remplacez `ADRESSE-NEOGEN` par l'adresse de NéoGen et complétez **CONTACT DU FORMATEUR**.
+`kit-arrivee-kilo-code-neogen.md` est à envoyer aux participants avant la formation : en 5 étapes (20 minutes), ils installent Kilo Code dans le VS Code de leur workspace Coder et le branchent sur NéoGen. Avant l'envoi, remplacez `ADRESSE-NEOGEN` par l'adresse de NéoGen et complétez **CONTACT DU FORMATEUR**. Les mêmes 5 étapes sont reprises en séance, sur la slide « Installez Kilo Code et NéoGen » (étape 3) : cliquez sur l'adresse affichée pour y taper la vraie, elle est mémorisée dans le navigateur.
 
 ## Ressources interactives
 

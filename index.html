@@ -407,21 +407,6 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 .tick.ok{background:#DDFBF1;border-color:#12A877;color:#0B6B4C}
 .tick.ko{background:#FFE3E3;border-color:var(--corail);color:#B4232A}
 
-/* Atelier prompt : relecture */
-.battle{display:grid;grid-template-columns:1fr 480px;gap:36px;margin-top:6px}
-.battle-text,.battle-edit{width:100%;height:420px;border-radius:22px;background:var(--gris);padding:24px 28px;font-family:var(--mono);font-size:21px;line-height:1.5;white-space:pre-wrap;overflow:auto;color:var(--texte);border:0}
-.battle-text mark{background:#FFD7D7;color:#9B111E;border-radius:6px;padding:1px 3px;box-shadow:inset 0 -3px 0 var(--corail)}
-.battle-edit{display:none;resize:none;border:3px solid var(--bleu);background:#fff}
-.grid-list{display:flex;flex-direction:column;gap:9px;margin-top:12px}
-.crit{appearance:none;display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;text-align:left;border:2px solid var(--gris-2);background:#fff;border-radius:14px;padding:9px 14px;font-size:21px;font-weight:700;color:var(--texte);cursor:pointer}
-.crit .box{width:34px;height:34px;border-radius:9px;border:3px solid var(--gris-2);display:grid;place-items:center;font-weight:900;color:#fff}
-.crit[aria-pressed="true"]{border-color:#12A877;background:#F0FDF8}
-.crit[aria-pressed="true"] .box{background:#12A877;border-color:#12A877}
-.crit[aria-pressed="true"] .pts{color:#0B6B4C}
-.grid-list{gap:7px!important}
-.crit{padding:7px 14px!important;font-size:20px!important}
-.grid-score{font-size:30px;font-weight:900;color:var(--bleu);margin-top:14px}
-
 /* Chasse aux pièges */
 .trap{border-radius:6px;transition:background .3s,box-shadow .3s}
 .trap.on{background:#FFD7D7;box-shadow:inset 0 -3px 0 var(--corail);color:#9B111E}
@@ -871,7 +856,7 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 .miss .mm{font-weight:800;color:#9B111E;font-size:20px;line-height:1.25}
 .miss b{color:var(--marine)}
 
-/* Slide 32 · badge d'accès : l'explication passe sous l'action et les boutons, sur toute la largeur */
+/* Slide 31 · badge d'accès : l'explication passe sous l'action et les boutons, sur toute la largeur */
 .vote[data-set="perms"]{gap:8px}
 .vote[data-set="perms"] .model-row{padding:10px 20px;row-gap:2px;font-size:24px}
 .vote[data-set="perms"] .model-row > span:first-child{display:contents}
@@ -880,7 +865,7 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 .vote[data-set="perms"] .model-row .hint{grid-column:1/-1;grid-row:2;margin-top:0;font-size:18px;line-height:1.3}
 .vote[data-set="perms"] .mopt{font-size:18px;padding:8px 14px}
 
-/* Slide 50 · diagramme de séquence : la flèche de l'accord */
+/* Slide 49 · diagramme de séquence : la flèche de l'accord */
 .arrow.ok-a{background:#12A877}
 .arrow.ok-a.r::after{border-left-color:#12A877}
 .arrow.ok-a .lbl{color:#0B6B4C}
@@ -888,6 +873,60 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
 /* Slide 77 · les sources apparaissent avec les deux études (METR puis DORA) */
 .src-after{opacity:0;transition:opacity .4s ease}
 .slide:has(.dora-card.visible) .src-after{opacity:1}
+
+/* Exercice 1 · le post-it à réparer, face à Ada de mauvaise foi */
+.postit.sm{width:640px;font-size:42px;padding:32px 38px 24px}
+.postit.sm small{font-size:32px;margin-top:8px}
+.mf-prompt{font-size:18px;line-height:1.5;padding:18px 24px;margin-top:10px}
+.mf-ask{background:#FFE27A;color:#2B2100;border-radius:6px;padding:1px 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.mf-rules{list-style:none;margin:34px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.mf-rules li{display:grid;grid-template-columns:44px 1fr;gap:12px;font-size:24px;line-height:1.38}
+.mf-rules li span:first-child{font-size:30px;line-height:1.1}
+.mf-board{border-collapse:collapse;width:100%}
+.mf-board th{font-size:20px;text-transform:uppercase;letter-spacing:.06em;color:var(--texte-doux);padding:8px 12px;text-align:center;border-bottom:2px solid var(--gris-2)}
+.mf-board td{padding:14px 12px;border-bottom:2px solid var(--gris-2);text-align:center}
+.mf-board td.team{text-align:left;font-size:32px;font-weight:800;white-space:nowrap}
+.mf-in{width:124px;height:74px;border-radius:16px;border:3px solid var(--gris-2);background:#fff;color:var(--marine);font-family:var(--font);font-size:40px;font-weight:900;text-align:center;-moz-appearance:textfield;appearance:textfield}
+.mf-in::-webkit-outer-spin-button,.mf-in::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.mf-in:not(:placeholder-shown){border-color:var(--bleu);background:#EEF3FF}
+.card .mf-holes,.mf-holes{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.mf-holes li{display:grid;grid-template-columns:40px 1fr;gap:10px;font-size:21px;line-height:1.35}
+.mf-holes li span:first-child{font-size:26px}
+.mf-holes li i{display:block;font-style:normal;color:var(--corail);font-weight:700;font-size:19px}
+.postit{position:relative;width:820px;margin:8px 0 0 10px;padding:38px 46px 30px;background:#FFE27A;color:#2B2100;border-radius:6px 6px 34px 6px;transform:rotate(-2deg);box-shadow:0 28px 60px rgba(0,0,0,.4);font-family:var(--hand);font-weight:700;font-size:52px;line-height:1.12}
+.postit::before{content:"";position:absolute;top:-18px;left:50%;width:170px;height:38px;background:rgba(255,255,255,.38);transform:translateX(-50%) rotate(3deg)}
+.postit small{display:block;margin-top:14px;font-size:38px;font-weight:600;text-align:right;color:#6B5200}
+.active .postit{animation:postitIn .8s var(--ease) both}
+@keyframes postitIn{from{transform:translateY(-120px) rotate(-12deg);opacity:0}to{transform:rotate(-2deg);opacity:1}}
+
+/* Installez Kilo Code et NéoGen */
+.install{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.install li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.12);border-radius:18px;padding:10px 18px}
+.install .n{width:44px;height:44px;border-radius:50%;background:var(--menthe);color:var(--marine);display:grid;place-items:center;font-size:24px;font-weight:900}
+.install b{display:block;font-size:24px;line-height:1.25}
+.install span.d{display:block;font-size:20px;line-height:1.38;color:#C9D3F2;margin-top:1px}
+.install span.d b{display:inline;font-size:inherit;color:#fff}
+.install code{font-size:18px;color:var(--menthe)}
+.install .cfg{display:grid;grid-template-columns:160px 1fr;gap:1px 16px;margin-top:6px;font-family:var(--mono);font-size:17px;line-height:1.4;background:rgba(0,0,0,.25);border-radius:12px;padding:10px 14px}
+.install .cfg span:nth-child(odd){color:#8C98BF}
+.install .cfg span:nth-child(even){color:#fff}
+.install [contenteditable="true"]{justify-self:start;outline:none;border-bottom:2px dashed rgba(107,251,206,.45)}
+.card .fixes,.fixes{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.fixes li{font-size:20px;line-height:1.35}
+.fixes li b{color:var(--menthe)}
+
+/* Exercice 2 · Piégez Ada */
+.trap-ideas{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.trap-ideas li{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,82,82,.14);border:2px solid rgba(255,82,82,.4);border-radius:14px;padding:9px 16px;font-family:var(--mono);font-size:18.5px;line-height:1.35;color:#FFE3E3}
+.trap-ideas .rn{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--menthe);color:var(--marine);font-family:var(--font);font-weight:900;font-size:15px}
+.tick.sig{background:#FFF4E5;border-color:#E8A33D;color:#8A4B00;font-size:20px}
+.trap-legend{font-size:19px;font-weight:600;color:var(--texte-doux);margin:12px 0 0;line-height:1.4}
+
+/* Qu'en pensez-vous ? */
+.talk{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:34px;padding:0 200px}
+.talk .i{font-size:120px;line-height:1}
+.talk h2{font-size:120px;font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:0;max-width:1500px}
+.talk h2 em{font-style:normal;color:var(--corail)}
 
 </style>
 </head>
@@ -978,22 +1017,22 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
   <p class="lead">Une journée, sept étapes, quatre grands exercices en équipe</p>
   <div class="journey">
     <div class="jstop step"><div class="jdot">0</div><div class="jtime"><time data-h="9:30">9h30</time></div><div class="jname">Accueil</div></div>
-    <div class="jstop step"><div class="jdot">1</div><div class="jtime"><time data-h="9:46">9h46</time></div><div class="jname">Dans la tête d'Ada</div></div>
-    <div class="jstop step epreuve"><div class="jdot">2</div><div class="jtime"><time data-h="10:02">10h02</time></div><div class="jname">Parler à Ada</div><div class="jtag">Exercice 1<br>Atelier prompt</div></div>
+    <div class="jstop step"><div class="jdot">1</div><div class="jtime"><time data-h="9:45">9h45</time></div><div class="jname">Dans la tête d'Ada</div></div>
+    <div class="jstop step epreuve"><div class="jdot">2</div><div class="jtime"><time data-h="10:00">10h00</time></div><div class="jname">Parler à Ada</div><div class="jtag">Exercice 1<br>Atelier prompt</div></div>
     <div class="jstop step epreuve"><div class="jdot">3</div><div class="jtime"><time data-h="11:15">11h15</time></div><div class="jname">Ada à son poste</div><div class="jtag">Exercice 2<br>Le défi AGENTS.md</div></div>
-    <div class="jstop step epreuve"><div class="jdot">4</div><div class="jtime"><time data-h="14:28">14h28</time></div><div class="jname">Les outils d'Ada</div><div class="jtag">Exercice 3<br>Le marché des MCP</div></div>
-    <div class="jstop step epreuve"><div class="jdot">5</div><div class="jtime"><time data-h="15:30">15h30</time></div><div class="jname">Travailler avec Ada</div><div class="jtag">Exercice 4<br>La Mission</div></div>
-    <div class="jstop step"><div class="jdot">6</div><div class="jtime"><time data-h="16:36">16h36</time></div><div class="jname">Ada fait des bêtises</div></div>
-    <div class="jstop step"><div class="jdot">7</div><div class="jtime"><time data-h="16:56">16h56</time></div><div class="jname">Fin de période d'essai</div></div>
+    <div class="jstop step epreuve"><div class="jdot">4</div><div class="jtime"><time data-h="14:30">14h30</time></div><div class="jname">Les outils d'Ada</div><div class="jtag">Exercice 3<br>Le marché des MCP</div></div>
+    <div class="jstop step epreuve"><div class="jdot">5</div><div class="jtime"><time data-h="15:35">15h35</time></div><div class="jname">Travailler avec Ada</div><div class="jtag">Exercice 4<br>La Mission</div></div>
+    <div class="jstop step"><div class="jdot">6</div><div class="jtime"><time data-h="16:40">16h40</time></div><div class="jname">Ada fait des bêtises</div></div>
+    <div class="jstop step"><div class="jdot">7</div><div class="jtime"><time data-h="17:00">17h00</time></div><div class="jname">Fin de période d'essai</div></div>
   </div>
   <div class="row" style="position:absolute;left:140px;right:140px;bottom:150px;justify-content:center;gap:24px">
-    <span class="chip">☕ Pause <time data-h="11:05">11h05</time></span><span class="chip">🍽️ Déjeuner <time data-h="12:00">12h00</time> – <time data-h="13:30">13h30</time></span><span class="chip">☕ Pause <time data-h="15:20">15h20</time></span><span class="chip">Fin vers <time data-h="17:30">17h30</time></span>
+    <span class="chip">☕ Pause <time data-h="11:05">11h05</time></span><span class="chip">🍽️ Déjeuner <time data-h="12:00">12h00</time> – <time data-h="13:30">13h30</time></span><span class="chip">☕ Pause <time data-h="15:25">15h25</time></span><span class="chip">Fin vers <time data-h="17:30">17h30</time></span>
   </div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="9:34">9h34</time> · 2 min</p>
     <p>Voilà le parcours d'intégration d'Ada. On commence par comprendre comment elle pense. Ensuite on apprend à lui parler, on lui installe son poste dans l'IDE, on lui donne des outils, on travaille avec elle sur une vraie fonctionnalité, on voit comment repérer ses bêtises, et ce soir, bilan de sa période d'essai.</p>
     <p>Les bulles avec un contour rouge, ce sont les quatre grands exercices en équipe : on y met les mains.</p>
-    <p class="me">→ Pauses : <time data-h="11:05">11h05</time>, <time data-h="12:00">12h00</time> – <time data-h="13:30">13h30</time>, <time data-h="15:20">15h20</time>. À distance, propose aussi 2 minutes « pieds sous la table » quand l'énergie baisse.</p>
+    <p class="me">→ Pauses : <time data-h="11:05">11h05</time>, <time data-h="12:00">12h00</time> – <time data-h="13:30">13h30</time>, <time data-h="15:25">15h25</time>. Horaires arrondis : le minutage précis est dans les repères de chaque slide. À distance, propose aussi 2 minutes « pieds sous la table » quand l'énergie baisse.</p>
   </aside>
 </section>
 
@@ -1061,7 +1100,7 @@ body.presenter #presenter{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
   <aside class="notes">
     <p class="rep">Repère : <time data-h="9:40">9h40</time> · ~7 min</p>
     <p>On remplace le traditionnel tour de table par un Kahoot. Allez sur kahoot.it avec votre téléphone et tapez le code. Une dizaine de questions rapides, pas de mauvaise réponse ici : c'est pour que je vous connaisse, et pour adapter la journée.</p>
-    <p class="me">→ Tape le code PIN dans le champ : il s'affiche en grand. Kahoot n°0 « Qui êtes-vous ? » (NéoSoft Training, dossier IA) : 9 sondages et un nuage de mots, 15 à 20 secondes chacun. Ne commente que trois réponses : l'autonomie laissée aux agents, ce qui les agace (chaque frustration a son étape dans la journée) et le temps gagné. Note la répartition de « l'IA vous fait-elle gagner du temps ? » : tu la ressortiras à 16h56, sur la slide de la mesure. Note aussi les attentes : tu y reviendras à la clôture. Repère les plus à l'aise : ils pourront aider leurs voisins.</p>
+    <p class="me">→ Tape le code PIN dans le champ : il s'affiche en grand. Kahoot n°0 « Qui êtes-vous ? » (NéoSoft Training, dossier IA) : 9 sondages et un nuage de mots, 15 à 20 secondes chacun. Ne commente que trois réponses : l'autonomie laissée aux agents, ce qui les agace (chaque frustration a son étape dans la journée) et le temps gagné. Note la répartition de « l'IA vous fait-elle gagner du temps ? » : tu la ressortiras à <time data-h="17:01">17h01</time>, sur la slide de la mesure. Note aussi les attentes : tu y reviendras à la clôture. Repère les plus à l'aise : ils pourront aider leurs voisins.</p>
   </aside>
 </section>
 
@@ -1286,42 +1325,77 @@ Un bloc de code par fichier modifié, rien d'autre.</div></div>
   </aside>
 </section>
 
-<!-- ============ 21 · ATELIER PROMPT ============ -->
+<!-- ============ 21 · ATELIER PROMPT : ADA DE MAUVAISE FOI ============ -->
 <section class="slide dark" data-title="Exercice 1 · Atelier prompt" data-module="Étape 2 · Parler à Ada" data-score="👥 Exercice 1 · en équipe">
-  <div class="grid2" style="grid-template-columns:1.2fr .8fr;gap:70px;align-items:start">
+  <span class="chip corail">👥 Exercice 1 · Atelier prompt</span>
+  <h2 style="font-size:80px;font-weight:900;margin:14px 0 4px">Ada de mauvaise foi</h2>
+  <p style="font-size:28px;color:#C9D3F2;margin:0;line-height:1.4">Réparez le post-it jusqu'à ce qu'Ada <b style="color:#fff">ne trouve plus aucun trou</b> à exploiter.</p>
+  <div class="grid2" style="grid-template-columns:.82fr 1.18fr;gap:56px;margin-top:34px;align-items:start">
     <div>
-      <span class="chip corail">👥 Exercice 1</span>
-      <h2 style="font-size:84px;font-weight:900;margin:22px 0 26px">Atelier prompt</h2>
-      <div class="card glass">
-        <p style="margin:0 0 12px"><b class="menthe">La demande</b> (dans la stack de votre choix) :</p>
-        <p style="margin:0;font-size:30px">« Le calcul du prix total d'une commande sur une boutique en ligne, prêt à partir en revue de code. »</p>
-      </div>
-      <ol style="font-size:27px;line-height:1.5;margin-top:26px;padding-left:36px">
-        <li>Dans votre discussion d'équipe, écrivez <b>un seul prompt</b> ensemble</li>
-        <li><b>Ne l'envoyez pas à l'IA</b> : on juge le prompt, pas le résultat</li>
-        <li>Collez-le dans le chat Teams, avec le nom de votre équipe</li>
-        <li>Au retour, chaque équipe relit le prompt d'une autre avec une grille de 8 critères</li>
+      <div class="postit sm">Ada, tu peux me coder le calcul du prix total d'une commande ? C'est pour la revue de code. Merci !<small>— l'équipe Boutique</small></div>
+      <ul class="mf-rules">
+        <li><span>🔁</span><span><b>3 manches de 3 minutes</b> : envoyez, lisez les trous, bouchez-les, renvoyez.</span></li>
+        <li><span>🧹</span><span><b>Une nouvelle conversation</b> à chaque manche.</span></li>
+        <li><span>🏆</span><span><b>Le moins de trous gagne.</b> Le formateur tranche en cas de doute.</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="kicker" style="color:var(--menthe);font-size:20px">Le prompt de jeu, à coller dans NéoGen</div>
+      <div class="prompt-card mf-prompt" id="mfPrompt">Tu es Ada, une développeuse de mauvaise foi.
+Lis la demande ci-dessous. Pour chaque information qui manque et qui changerait le code produit, choisis l'interprétation la plus absurde qui reste défendable.
+Ne code rien. Réponds uniquement par la liste numérotée des trous exploités, un par ligne, au format : trou → mon choix absurde.
+Ne compte pas les détails sans effet sur le code. Termine par : TOTAL = n
+
+Demande :
+<span class="mf-ask">Ada, tu peux me coder le calcul du prix total d'une commande ? C'est pour la revue de code. Merci !</span></div>
+      <div class="copy-row"><button type="button" class="btn small" data-copy="#mfPrompt" data-copy-raw>Copier le prompt de jeu</button><span class="copy-msg" aria-live="polite"></span></div>
+      <ol style="font-size:23px;line-height:1.45;margin:16px 0 0;padding-left:32px">
+        <li>Remplacez la <span class="mf-ask">demande</span> par votre post-it réparé, dans la stack de votre choix</li>
+        <li>Envoyez le tout à NéoGen, modèle <b>neogen-dev-high</b></li>
+        <li>Postez « Équipe : TOTAL = n » dans le chat Teams</li>
       </ol>
     </div>
-    <div class="card" style="padding:36px"><div data-widget="timer" data-seconds="600"></div></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="10:16">10h16</time> · 2 min de consigne + 10 min d'écriture</p>
-    <p>Premier exercice en équipe ! La demande est volontairement floue : « le calcul du prix total d'une commande sur une boutique en ligne, prêt à partir en revue de code ». C'est à vous d'inventer les règles : remises, frais de port, arrondis, cas d'erreur. Vous avez dix minutes en équipe pour écrire le meilleur prompt possible. Mais vous ne l'envoyez pas à l'IA.</p>
-    <p>Pourquoi ? Parce qu'une IA récente peut sortir un résultat très propre même à partir d'un prompt moyen : elle devine, et parfois elle devine bien. Juger le résultat ne dit donc pas si le prompt était bon. On va juger ce que le prompt laisse à deviner.</p>
-    <p class="me">→ Lance le minuteur : chaque équipe travaille dans sa discussion Teams, en appel si elle veut se parler. À la fin, chaque équipe colle son prompt dans le chat. Ne donne pas les critères de la grille avant : ils sont révélés à la slide suivante. Si une équipe demande « quelles règles de remise ? », réponds « celles que vous voulez, mais écrivez-les » : c'est tout l'enjeu.</p>
+    <p class="rep">Repère : <time data-h="10:16">10h16</time> · 4 min (2 de consigne, 2 de démo)</p>
+    <p>Premier exercice en équipe, et cette fois, c'est Ada qui juge. Voici le post-it qu'on lui laisse tous les jours : une ligne, un merci, et tout le reste à deviner. On va lui demander de jouer la mauvaise foi : pour chaque information qui manque, elle choisit l'interprétation la plus absurde, et elle compte les trous.</p>
+    <p>Démonstration : je lui envoie le post-it tel quel. … Voilà tout ce qu'elle aurait pu choisir à votre place.</p>
+    <p>À vous : réparez le post-it. Trois manches de trois minutes : vous envoyez votre version avec le prompt de jeu, vous lisez les trous qu'elle a trouvés, vous les bouchez, vous renvoyez. Une nouvelle conversation à chaque manche. L'équipe qui laisse le moins de trous gagne. Vous choisissez la stack, et vous inventez les règles : remises, frais de port, arrondis, cas d'erreur.</p>
+    <p class="me">→ Clique sur « Copier le prompt de jeu » et colle-le dans le chat Teams général. Démo en partage d'écran, dans NéoGen avec neogen-dev-high : envoie-le tel quel, avec le post-it d'origine, lis trois ou quatre trous à voix haute et montre le TOTAL. Teste-le avant la session pour connaître l'ordre de grandeur. Puis passe à la slide suivante : le minuteur et le tableau des scores y sont.</p>
   </aside>
 </section>
 
-<!-- ============ 21b · RELECTURE CROISÉE ============ -->
-<section class="slide light" data-title="Atelier prompt · relecture croisée" data-module="Étape 2 · Parler à Ada" data-score="👥 Exercice 1 · en équipe">
-  <h2 class="title" style="margin-bottom:6px">Relecture croisée des prompts</h2>
-  <p class="lead" style="font-size:25px;margin-bottom:14px">Pour chaque critère : est-ce écrit dans le prompt, ou Ada doit-elle le deviner ?</p>
-  <div data-widget="battle"></div>
+<!-- ============ 21b · LES MANCHES ============ -->
+<section class="slide light" data-title="Atelier prompt · les manches" data-module="Étape 2 · Parler à Ada" data-score="👥 Exercice 1 · en équipe">
+  <div class="row" style="justify-content:space-between;align-items:flex-start;gap:30px">
+    <div>
+      <h2 class="title" style="text-align:left;margin:0">Combien de trous pour Ada ?</h2>
+      <p style="font-size:24px;color:var(--texte-doux);margin:10px 0 0">À la fin de chaque manche : « Équipe : TOTAL = n » dans le chat. Le moins de trous gagne.</p>
+    </div>
+    <div data-widget="timer" data-seconds="180" data-compact="1"></div>
+  </div>
+  <div class="grid2" style="grid-template-columns:1fr 600px;gap:48px;margin-top:30px;align-items:start">
+    <div>
+      <div data-widget="mfscore"></div>
+      <div class="copy-row" style="margin-top:22px"><button type="button" class="btn small ghost" style="color:var(--marine)" data-copy="#mfPrompt" data-copy-raw>Recopier le prompt de jeu</button><span class="copy-msg" aria-live="polite"></span></div>
+    </div>
+    <div class="card soft step" style="padding:22px 28px">
+      <div class="kicker" style="color:var(--bleu);font-size:20px">Les trous qui reviennent</div>
+      <ul class="mf-holes">
+        <li><span>🧭</span><span><b>Le langage, la version, l'architecture</b><i>« Du COBOL, dans un seul fichier. »</i></span></li>
+        <li><span>🎯</span><span><b>Ce qu'on calcule, exactement</b><i>« Le total… sans les frais de port. »</i></span></li>
+        <li><span>🧑‍💻</span><span><b>Le niveau d'exigence</b><i>« Prêt pour la revue ? Personne ne l'a défini. »</i></span></li>
+        <li><span>📐</span><span><b>Les règles : remise, port, arrondi, panier vide</b><i>« 50 % pour tous, à l'euro près. »</i></span></li>
+        <li><span>📦</span><span><b>Ce que vous attendez en retour</b><i>« Des tests ? Personne n'en a demandé. »</i></span></li>
+      </ul>
+    </div>
+  </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="10:28">10h28</time> · 10 min</p>
-    <p>On relit les prompts, et chaque équipe relit celui d'une autre. Pour chaque critère de la grille, on se demande : est-ce que c'est dans le prompt, ou est-ce qu'Ada doit le deviner ? Et on cherche les incohérences : une contradiction, un statut qui n'existe pas, une version absente.</p>
-    <p class="me">→ Copie le prompt de chaque équipe depuis le chat Teams : onglet de l'équipe, « Coller / modifier le prompt », colle, puis « Valider le prompt ». Rotation : l'équipe A relit B, B relit C (ou A), C relit A. Pendant qu'elle commente, sélectionne à la souris chaque incohérence et clique sur « Surligner la sélection », puis coche les critères respectés. Tu as le dernier mot sur chaque case. Le but n'est pas de noter les équipes : c'est de montrer, critère par critère, ce que chaque prompt laisse à deviner.</p>
+    <p class="rep">Repère : <time data-h="10:20">10h20</time> · 3 manches de 4 min (3 pour écrire et envoyer, 1 pour les scores), puis 6 min de débrief</p>
+    <p>Manche 1 : réparez le post-it, envoyez-le avec le prompt de jeu, dans une nouvelle conversation, et postez votre total dans le chat. Entre deux manches : lisez les trous qu'Ada a trouvés, bouchez-les, renvoyez.</p>
+    <p>… Regardez les trous qui revenaient chez toutes les équipes. Ils tiennent en cinq familles : le langage et l'architecture, ce qu'on calcule exactement, le niveau d'exigence, les règles métier, et ce qu'on attend en retour. C'est exactement ce qu'on range à la slide suivante : les cinq blocs d'un bon prompt.</p>
+    <p>Et la leçon cachée : chaque trou, c'est un choix qu'Ada fait à votre place. Ici, elle les avoue parce qu'on le lui demande. D'habitude, elle choisit en silence.</p>
+    <p class="me">→ À chaque manche : lance le minuteur, puis laisse une minute pour que chaque équipe poste son total. Tape les scores dans le tableau (Entrée ou Tab pour valider), puis « Réinitialiser » le minuteur. Tu as le dernier mot : un trou sans effet sur le code ne compte pas, retire-le du total. Le 🏆 va à l'équipe la plus basse de la dernière manche complète. Entre les manches, fais lire à une équipe son trou le plus absurde : c'est ce qui fait rire. Une équipe déjà à 0 ? Défi bonus : raccourcir son prompt sans faire remonter le total. Fais apparaître « Les trous qui reviennent » au débrief.</p>
   </aside>
 </section>
 
@@ -1331,7 +1405,7 @@ Un bloc de code par fichier modifié, rien d'autre.</div></div>
   <div data-widget="builder" style="margin-top:36px"></div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="10:38">10h38</time> · 6 min</p>
-    <p>Si on range les critères de la grille, on retrouve cinq blocs : le contexte (qui je suis, sur quel projet, avec quelle stack), l'objectif, le rôle qu'on donne à Ada, les spécifications, et le format de sortie attendu. Je reprends la demande de l'atelier prompt : le prix d'une commande.</p>
+    <p>Si on range les trous qu'Ada a exploités, on retrouve cinq blocs : le contexte (qui je suis, sur quel projet, avec quelle stack), l'objectif, le rôle qu'on donne à Ada, les spécifications, et le format de sortie attendu. Je reprends le post-it de l'atelier : le prix d'une commande. Sans aucun bloc, c'est exactement lui.</p>
     <p>Regardez à droite : à chaque bloc ajouté, la liste de ce qu'Ada doit deviner rétrécit. Pas besoin des cinq pour une question rapide. Mais dès que la demande est costaude, c'est votre checklist.</p>
     <p class="me">→ Choisis la stack d'un participant dans la liste, puis active les blocs un par un en demandant au groupe : « qu'est-ce qu'Ada doit encore deviner ? ».</p>
   </aside>
@@ -1523,7 +1597,7 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="11:04">11h04</time> · 1 min</p>
     <p>Pause de dix minutes. On reprend à <time data-h="11:15">11h15</time> en installant Ada à son poste, dans votre IDE.</p>
-    <p class="me">→ Pendant la pause : vérifie que tout le monde a bien Kilo Code connecté à NéoGen sur le workspace Coder (tuto d'installation envoyé avant la formation). C'est le prérequis du bloc suivant.</p>
+    <p class="me">→ Pendant la pause : demande dans le chat qui a déjà installé Kilo Code et l'a branché sur NéoGen avec le kit d'arrivée. Les autres l'installent à <time data-h="11:31">11h31</time>, juste après la visite du poste et le badge d'accès : prévois de les aider en premier.</p>
   </aside>
 </section>
 
@@ -1581,19 +1655,6 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   </aside>
 </section>
 
-<!-- ============ 30 · QUEL MODE ? ============ -->
-<section class="slide light" data-title="Chat, inline ou agent ?" data-module="Étape 3 · Ada à son poste" data-score="💬 Vote dans le chat">
-  <h2 class="title">Chat, inline ou agent ?</h2>
-  <p class="lead" style="font-size:30px">Pour chaque situation, votez dans le chat : 💬, ⌨️ ou 🤖.</p>
-  <div data-widget="vote" data-set="modes" style="margin-top:30px"></div>
-  <aside class="notes">
-    <p class="rep">Repère : <time data-h="11:18">11h18</time> · 4 min</p>
-    <p>Petit échauffement. Pour chaque situation, vous votez dans le chat : bulle pour le chat, clavier pour l'inline, robot pour l'agent. Le plus vite possible.</p>
-    <p>… Vous voyez qu'il n'y a pas toujours une seule bonne réponse. La vraie question, c'est : est-ce qu'Ada doit toucher à plusieurs fichiers, ou lancer des commandes ? Si oui, c'est un agent. Sinon, le chat ou l'inline suffisent, et c'est plus rapide à relire.</p>
-    <p class="me">→ Lis la situation, laisse 10 secondes de vote, puis clique sur la réponse qui a le plus de voix : la bonne s'affiche en vert, l'explication apparaît dessous. Ne t'attarde pas : 30 secondes par ligne.</p>
-  </aside>
-</section>
-
 <!-- ============ 31 · VISITE DU POSTE ============ -->
 <section class="slide light" data-title="Visite du poste : Kilo Code" data-module="Étape 3 · Ada à son poste" data-score="🎬 Démonstration">
   <h2 class="title" style="text-align:left;margin-bottom:24px">Visite du poste : Kilo Code</h2>
@@ -1640,7 +1701,7 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   </div>
   <p class="disclaimer" style="margin-top:12px;text-align:left">Schéma simplifié : la disposition et les libellés exacts dépendent de la version de Kilo Code.</p>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="11:22">11h22</time> · 9 min (dont 6 de démo)</p>
+    <p class="rep">Repère : <time data-h="11:18">11h18</time> · 9 min (dont 6 de démo)</p>
     <p>Voici le poste d'Ada : Kilo Code, dans VS Code. Sept choses à connaître. En haut, l'agent : ask pour poser des questions, plan pour réfléchir sans toucher au code, code pour coder, debug pour enquêter. Ctrl+point pour passer de l'un à l'autre. À côté, le modèle NéoGen. Dans votre message, le @ pour lui montrer précisément un fichier. Quand elle veut agir, elle vous demande : c'est son badge d'accès, on y revient juste après. Chaque modification a son diff, et chaque message peut être annulé. Et en haut, la jauge : le bureau d'Ada qui se remplit.</p>
     <p>Maintenant, en vrai.</p>
     <p class="me">→ Démo dans ton workspace Coder, dans un dossier vide : (1) Ouvre le panneau Kilo, montre le sélecteur d'agent et Ctrl+. ; choisis neogen-dev-high. (2) Agent ask : « Explique-moi ce que contient ce dossier » : il lit sans rien modifier. (3) Agent plan : « Propose un plan pour une fonction qui calcule la TVA d'un montant » : le plan est écrit dans .kilo/plans/. (4) Agent code : « Implémente le plan, avec les tests » : refuse la première demande d'autorisation, accepte la suivante, ouvre le diff. (5) Annule les modifications du dernier message. (6) Montre la jauge de contexte. Si le réseau rame, montre seulement 2, 4 et 5.</p>
@@ -1671,42 +1732,49 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="11:31">11h31</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="11:27">11h27</time> · 4 min</p>
     <p>Un agent agit sur votre machine. Avant de lui confier un ticket, on lui fait son badge d'accès. Pour chaque action, vous votez : autoriser sans demander, demander à chaque fois, ou interdire.</p>
     <p>… Retenez l'idée : on autorise ce qui ne fait que lire ou vérifier, on fait demander ce qui modifie ou installe, et on interdit ce qui touche aux secrets ou publie à votre place. Dans Kilo Code, ça se règle dans les paramètres, onglet Auto Approve, outil par outil, ou dans le fichier kilo.jsonc. Par défaut, ce qui n'a pas de règle est en « demander ».</p>
     <p>Attention au bouton « Toujours autoriser » : il enregistre une règle définitive. Pratique, mais on finit par tout autoriser sans s'en rendre compte. Et le mode « tout autoriser », on le garde pour un environnement jetable.</p>
-    <p class="me">→ Même déroulé que le vote précédent. Pour la journée, recommande : lecture et tests autorisés, tout le reste en « demander ». La syntaxe du fichier est un exemple : vérifie-la dans la doc Kilo (Agent Permissions) avant de la distribuer.</p>
+    <p class="me">→ Lis l'action, laisse 10 secondes de vote dans le chat, puis clique sur la réponse qui a le plus de voix : la bonne s'affiche en vert, l'explication apparaît dessous. Ne t'attarde pas : 30 secondes par ligne. Pour la journée, recommande : lecture et tests autorisés, tout le reste en « demander ». La syntaxe du fichier est un exemple : vérifie-la dans la doc Kilo (Agent Permissions) avant de la distribuer.</p>
   </aside>
 </section>
 
-<!-- ============ 33 · PREMIER JOUR D'ADA ============ -->
-<section class="slide dark" data-title="Le premier jour d'Ada (pratique)" data-module="Étape 3 · Ada à son poste" data-score="🧑‍💻 Pratique individuelle">
-  <div class="grid2" style="grid-template-columns:1.3fr .7fr;gap:60px;align-items:start">
+<!-- ============ 32 · INSTALLEZ KILO CODE ET NÉOGEN ============ -->
+<section class="slide dark" data-title="Installez Kilo Code et NéoGen" data-module="Étape 3 · Ada à son poste" data-score="🧑‍💻 Pratique individuelle">
+  <div class="grid2" style="grid-template-columns:1.34fr .66fr;gap:54px;align-items:start">
     <div>
-      <span class="chip menthe">🧑‍💻 À vous · 13 minutes</span>
-      <h2 style="font-size:76px;font-weight:900;margin:18px 0 18px">Le premier jour d'Ada</h2>
-      <div class="card glass" style="padding:22px 28px">
-        <p style="margin:0;font-size:25px">Dans un <b class="menthe">dossier vide</b> de votre workspace, faites coder à Ada le calcul du prix d'une commande, dans votre stack :</p>
-        <p class="rules-line">Remise de 10 % dès 100 € · port 4,90 € offert dès 50 € après remise · arrondi au centime · panier vide : erreur</p>
-      </div>
-      <ul class="badge-list">
-        <li><span class="e">🗺️</span><span><b>Agent plan</b> : faites-lui proposer un plan, et corrigez-le.</span></li>
-        <li><span class="e">🤖</span><span><b>Agent code</b> : faites-le implémenter, avec les tests.</span></li>
-        <li><span class="e">🔍</span><span>Relisez le <b>diff</b> avant de continuer.</span></li>
-        <li><span class="e">🛑</span><span><b>Refusez</b> une demande d'autorisation, en disant pourquoi.</span></li>
-        <li><span class="e">⏪</span><span><b>Annulez</b> une modification, puis refaites-la.</span></li>
-        <li><span class="e">📎</span><span><b>Agent ask</b> : une question sur un fichier précis, avec <code>@</code>.</span></li>
-      </ul>
+      <span class="chip menthe">🧑‍💻 À vous · 15 minutes</span>
+      <h2 style="font-size:60px;font-weight:900;margin:14px 0 18px">Installez Kilo Code et NéoGen</h2>
+      <ol class="install">
+        <li><span class="n">1</span><div><b>Votre clé d'API NéoGen</b><span class="d">Profil → <b>Paramètres → Compte → Clés d'API</b> → Générer. Copiez-la tout de suite : elle ne s'affiche qu'une fois.</span></div></li>
+        <li><span class="n">2</span><div><b>L'extension Kilo Code</b><span class="d">Extensions (<code>Ctrl+Shift+X</code>) → « Kilo Code » → flèche à côté d'Installer → <b>Installer la version préliminaire</b>.</span></div></li>
+        <li><span class="n">3</span><div><b>Le branchement sur NéoGen</b><span class="d">Panneau Kilo → Paramètres → <b>Providers</b> → Custom provider :</span>
+          <div class="cfg"><span>Provider API</span><span>OpenAI Compatible</span><span>Base URL</span><span contenteditable="true" data-edit="neogen.url" spellcheck="false">https://ADRESSE-NEOGEN/api</span><span>API key</span><span>votre clé de l'étape 1</span><span>Models</span><span>neogen-dev-low · high · max</span></div></div></li>
+        <li><span class="n">4</span><div><b>Le badge d'accès</b><span class="d">Paramètres → <b>Auto Approve</b> : la lecture sur Autoriser, <b>tout le reste sur Demander</b>.</span></div></li>
+        <li><span class="n">5</span><div><b>Le test</b><span class="d">Dossier <code>test-kilo</code>, agent <b>code</b>, modèle <b>neogen-dev-high</b> : « Crée un fichier bonjour.md qui contient la phrase : Bonjour Ada. »</span></div></li>
+      </ol>
     </div>
-    <div class="stack" style="gap:24px">
-      <div class="card" style="padding:30px"><div data-widget="timer" data-seconds="780"></div></div>
-      <div class="card glass" style="padding:20px 26px"><p style="margin:0;font-size:23px">Postez chaque badge dans le chat dès que vous l'avez : <span style="font-size:30px">🗺️ 🤖 🔍 🛑 ⏪ 📎</span></p></div>
+    <div class="stack" style="gap:20px">
+      <div class="card" style="padding:24px 28px"><div data-widget="timer" data-seconds="900" data-compact="1"></div></div>
+      <div class="card glass" style="padding:20px 26px"><p style="margin:0;font-size:23px;line-height:1.4"><b class="menthe">bonjour.md est apparu ?</b> Postez ✅ dans le chat.</p><p style="margin:10px 0 0;font-size:21px;line-height:1.4;color:#C9D3F2">Déjà fait avec le kit d'arrivée ? Faites seulement l'étape 5, puis aidez un voisin.</p></div>
+      <div class="card glass" style="padding:20px 26px">
+        <div class="kicker" style="color:var(--corail);font-size:19px">Bloqué ?</div>
+        <ul class="fixes">
+          <li><b>Liste de modèles vide</b> : l'adresse finit par <code>/api</code>, sans barre oblique, puis «&nbsp;Fetch&nbsp;models&nbsp;».</li>
+          <li><b>Erreur 401</b> : clé incomplète. Générez-en une nouvelle.</li>
+          <li><b>Kilo propose un compte ou des crédits</b> : refusez, revenez à l'étape 3.</li>
+        </ul>
+      </div>
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="11:35">11h35</time> · 13 min</p>
-    <p>À vous. Dans un dossier vide de votre workspace, vous faites coder à Ada le calcul du prix d'une commande, avec les règles de ce matin, dans votre stack. Mais le but n'est pas le code : c'est de manipuler le poste. Six badges à décrocher : faire un plan, faire coder, relire le diff, refuser une autorisation, annuler une modification, et poser une question ciblée avec @. Postez vos badges dans le chat au fur et à mesure.</p>
-    <p class="me">→ Fais un tour du chat toutes les 3 minutes et encourage à voix haute ceux qui postent. Ceux qui ont fini aident un voisin en partage d'écran. Quelqu'un bloqué sur la connexion NéoGen fait l'exercice en binôme avec un voisin, et tu notes le problème pour la pause déjeuner. Le badge 🛑 s'obtient facilement : demander « installe une librairie de calcul monétaire » provoque une demande d'installation à refuser.</p>
+    <p class="rep">Repère : <time data-h="11:31">11h31</time> · 2 min de consigne + 15 min d'installation</p>
+    <p>À vous : on installe le poste d'Ada chez vous. Cinq étapes, celles du kit d'arrivée : une clé d'API dans NéoGen, l'extension Kilo Code, le branchement de Kilo sur NéoGen, le badge d'accès qu'on vient de voter, et un petit test. Ceux qui l'ont déjà fait avec le kit passent directement au test, puis aident un voisin.</p>
+    <p>Deux consignes de sécurité. Votre clé d'API est personnelle : ne la collez ni dans le chat, ni dans un fichier versionné. Et pendant le test, quand Kilo vous demande l'autorisation, cliquez sur « Autoriser », pas sur « Toujours autoriser » : ce bouton enregistre une règle définitive.</p>
+    <p>Quand bonjour.md apparaît dans votre dossier, postez ✅ dans le chat.</p>
+    <p class="me">→ Avant la session : clique sur l'adresse « https://ADRESSE-NEOGEN/api » de la slide et tape la vraie adresse de NéoGen, terminée par /api, sans barre oblique finale. Elle est mémorisée dans ton navigateur. Colle aussi le kit d'arrivée (kit-arrivee-kilo-code-neogen.md) dans le chat Teams au lancement.</p>
+    <p class="me">→ Fais un tour du chat toutes les 3 minutes et compte les ✅. Pannes fréquentes : pas de rubrique Clés d'API dans NéoGen (les clés ne sont pas activées pour ce compte : à signaler à l'administrateur) ; Kilo Code introuvable (chercher sans filtre ; dans un VS Code du navigateur, la liste vient d'Open VSX) ; erreur réseau ou de certificat (Kilo utilise les réglages réseau de VS Code : vérifier le proxy du workspace). Quelqu'un encore bloqué à la fin suit le reste de la matinée en binôme avec un voisin, et tu règles son cas pendant le déjeuner.</p>
   </aside>
 </section>
 
@@ -1791,7 +1859,7 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="11:55">11h55</time> · 2 min</p>
     <p>Bon appétit ! On reprend à <time data-h="13:30">13h30</time> avec l'exercice 2, en équipe : écrire l'AGENTS.md d'Ada. Gardez en tête ce qu'on vient de voir sur le livret d'accueil.</p>
-    <p class="me">→ Pendant le déjeuner : règle les problèmes de connexion NéoGen signalés pendant la pratique. Le Kahoot n°1 a lieu après la démo RAG, vers <time data-h="14:18">14h18</time> : lance-le juste avant.</p>
+    <p class="me">→ Pendant le déjeuner : règle les problèmes d'installation de Kilo Code et de connexion NéoGen signalés avant midi : tout le monde doit avoir son ✅ pour l'exercice 2. Le Kahoot n°1 a lieu après la démo RAG, vers <time data-h="14:20">14h20</time> : lance-le juste avant.</p>
   </aside>
 </section>
 
@@ -1807,29 +1875,29 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
       <ol style="font-size:25px;line-height:1.45;margin:20px 0 0;padding-left:34px">
         <li>Dans votre discussion d'équipe, lisez le livret de l'équipe Boutique (je le colle dans le chat).</li>
         <li>À partir de ce livret, écrivez votre <b>AGENTS.md</b> : <b class="menthe">20 lignes maximum</b>.</li>
-        <li>Un membre crée un dossier vide, y place votre AGENTS.md, et lance <b>la tâche ci-dessous</b> avec l'agent code, sans la modifier.</li>
-        <li>Partage d'écran : je vérifie si le code d'Ada respecte 8 règles du livret.</li>
+        <li>On le compare à un corrigé : 8 règles à retrouver.</li>
+        <li><b>Le crash-test</b> : vous essayez de piéger Ada avec une demande qui contredit votre AGENTS.md. Va-t-il tenir ?</li>
       </ol>
-      <div class="prompt-card" id="abTask" style="font-size:19px;margin-top:18px;padding:18px 24px">Crée le module de calcul du prix d'une commande, avec ses tests : sous-total, remise de 10 % dès 100 €, frais de port de 4,90 € offerts dès 50 € après remise, et un code promo BIENVENUE qui retire 5 €. Un panier vide est interdit.</div>
-      <div class="copy-row"><button type="button" class="btn small" data-copy="#abTask">Copier la tâche</button><button type="button" class="btn small ghost" style="color:#fff" data-copy="#abHandbook">Copier le livret de l'équipe</button><span class="copy-msg" aria-live="polite"></span></div>
+      <div class="copy-row" style="margin-top:22px"><button type="button" class="btn small ghost" style="color:#fff" data-copy="#abHandbook">Copier le livret de l'équipe</button><span class="copy-msg" aria-live="polite"></span></div>
     </div>
     <div class="stack" style="gap:22px;margin-top:120px">
       <div class="card glass" style="padding:26px 30px">
         <div class="kicker" style="color:var(--menthe);font-size:20px">Le déroulé</div>
         <ul class="dolist" style="margin-top:14px">
           <li style="font-size:25px"><span>✍️</span><span><b>10 min</b> : écrire votre AGENTS.md</span></li>
-          <li style="font-size:25px"><span>▶️</span><span><b>4 min</b> : lancer la tâche</span></li>
-          <li style="font-size:25px"><span>🔍</span><span><b>6 min</b> : correction ensemble</span></li>
+          <li style="font-size:25px"><span>✅</span><span><b>2 min</b> : le corrigé</span></li>
+          <li style="font-size:25px"><span>🪤</span><span><b>6 min</b> : piéger Ada</span></li>
+          <li style="font-size:25px"><span>🔍</span><span><b>4 min</b> : le verdict, ensemble</span></li>
         </ul>
       </div>
-      <div class="card glass" style="padding:22px 30px"><p style="margin:0;font-size:25px">D'une équipe à l'autre, seul l'<b class="menthe">AGENTS.md</b> change : c'est lui qu'on teste, pas vous.</p></div>
+      <div class="card glass" style="padding:22px 30px"><p style="margin:0;font-size:25px">C'est votre <b class="menthe">AGENTS.md</b> qu'on teste, pas vous.</p></div>
     </div>
   </div>
   <aside class="notes">
     <p class="rep">Repère : <time data-h="13:30">13h30</time> · 3 min de consigne, puis 10 min d'écriture</p>
     <p>Deuxième exercice : le défi AGENTS.md. L'équipe Boutique a un livret d'accueil pour ses nouveaux arrivants humains : deux pages, avec la machine à café, les rituels, et quelque part dedans, les règles qui comptent pour du code. Votre mission : en tirer l'AGENTS.md qui fera respecter ces règles à Ada. Vingt lignes maximum.</p>
-    <p>Ensuite, un membre de chaque équipe place votre AGENTS.md dans un dossier vide et lance exactement la même tâche, sans y toucher. D'une équipe à l'autre, seul l'AGENTS.md change. Puis on regarde le code ensemble : huit règles du livret à vérifier.</p>
-    <p class="me">→ Clique sur « Copier le livret de l'équipe » et colle-le dans le chat Teams général, puis « Copier la tâche » et colle-la aussi. Le minuteur est sur la slide suivante (le livret de l'équipe) : lance-le quand les équipes ont rejoint leurs discussions. Ne révèle pas les 8 règles avant la fin : c'est à elles de les trouver. Une équipe qui dépasse 20 lignes coupe avant de lancer.</p>
+    <p>Ensuite, on le compare à un corrigé. Puis le crash-test : vous écrivez une demande piégée, qui contredit votre AGENTS.md sans en avoir l'air, et vous regardez qui gagne. Le livret d'accueil, ou votre message ?</p>
+    <p class="me">→ Clique sur « Copier le livret de l'équipe » et colle-le dans le chat Teams général. Le minuteur est sur la slide suivante (le livret de l'équipe) : lance-le quand les équipes ont rejoint leurs discussions. Ne révèle pas les 8 règles avant le corrigé : c'est à elles de les trouver. Une équipe qui dépasse 20 lignes coupe avant le crash-test.</p>
   </aside>
 </section>
 
@@ -1889,49 +1957,10 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   </aside>
 </section>
 
-<!-- ============ 38 · EXERCICE 2 · LANCEMENT ============ -->
-<section class="slide dark" data-title="Exercice 2 · Lancez le test" data-module="Étape 3 · Ada à son poste" data-score="👥 Exercice 2 · en équipe">
-  <div class="row" style="justify-content:space-between;align-items:flex-start">
-    <div><span class="chip corail">👥 Exercice 2 · le test</span><h2 style="font-size:72px;font-weight:900;margin-top:16px">Même tâche, chacun son AGENTS.md</h2></div>
-    <div data-widget="timer" data-seconds="240" data-compact="1"></div>
-  </div>
-  <div class="grid2" style="grid-template-columns:1fr 1fr;gap:50px;margin-top:34px">
-    <ol style="font-size:28px;line-height:1.6;margin:0;padding-left:38px">
-      <li>Un dossier vide, avec votre <code>AGENTS.md</code> à la racine</li>
-      <li>Kilo Code, agent <b>code</b>, modèle <b>neogen-dev-high</b></li>
-      <li>Collez la tâche, sans rien changer</li>
-      <li>Autorisez les modifications et les tests, et laissez-la finir</li>
-      <li>Préparez votre partage d'écran</li>
-    </ol>
-    <div>
-      <div class="kicker" style="color:var(--menthe)">La tâche, identique pour toutes les équipes</div>
-      <div class="prompt-card" style="font-size:22px;margin-top:12px">Crée le module de calcul du prix d'une commande, avec ses tests : sous-total, remise de 10 % dès 100 €, frais de port de 4,90 € offerts dès 50 € après remise, et un code promo BIENVENUE qui retire 5 €. Un panier vide est interdit.</div>
-      <p style="font-size:22px;color:#C9D3F2;margin-top:18px">D'une équipe à l'autre, seul l'AGENTS.md change. Si Ada respecte les règles de l'équipe Boutique, c'est grâce à lui.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p class="rep">Repère : <time data-h="13:43">13h43</time> · 4 min d'exécution</p>
-    <p>Le moment de vérité. Un membre de chaque équipe crée un dossier vide, y place votre AGENTS.md, ouvre Kilo Code avec l'agent code et le modèle neogen-dev-high, et colle la tâche sans rien changer. Autorisez les modifications et les tests, et laissez Ada finir.</p>
-    <p class="me">→ Pendant l'exécution, passe dans les discussions d'équipe pour débloquer. Si une équipe a un problème technique, elle peut relancer une fois. Si Ada n'a pas fini à la fin du minuteur, on corrige ce qui existe.</p>
-  </aside>
-</section>
-
-<!-- ============ 39 · EXERCICE 2 · CORRECTION ============ -->
-<section class="slide light" data-title="Exercice 2 · Correction" data-module="Étape 3 · Ada à son poste" data-score="👥 Exercice 2 · en équipe">
-  <h2 class="title" style="text-align:left;margin-bottom:20px">Le verdict : Ada a-t-elle respecté les 8 règles ?</h2>
-  <div data-widget="abtest"></div>
-  <aside class="notes">
-    <p class="rep">Repère : <time data-h="13:47">13h47</time> · 5 min</p>
-    <p>Équipe par équipe, on regarde le code qu'Ada a produit avec votre AGENTS.md. Pour chaque règle de l'équipe Boutique, on vérifie dans le code : vous me montrez le fichier ou la ligne qui le prouve.</p>
-    <p>… Ce qui fait la différence, ce n'est pas la longueur de l'AGENTS.md. C'est d'avoir écrit des règles vérifiables, au lieu de « écris du code propre ».</p>
-    <p class="me">→ Coche chaque équipe pendant son partage d'écran : un clic = ✓, deux clics = ✗, trois = vide. Le total de chaque équipe s'affiche en bas : il sert à comparer les AGENTS.md entre eux, pas à classer les équipes.</p>
-  </aside>
-</section>
-
-<!-- ============ 39b · EXERCICE 2 · UN CORRIGÉ ============ -->
+<!-- ============ 38 · EXERCICE 2 · LE CORRIGÉ ============ -->
 <section class="slide light" data-title="Exercice 2 · Un corrigé possible" data-module="Étape 3 · Ada à son poste" data-score="👥 Exercice 2 · en équipe">
   <h2 class="title" style="text-align:left;margin-bottom:4px">Un corrigé possible : 19 lignes, 8 règles</h2>
-  <p style="font-size:22px;color:var(--texte-doux);margin:0 0 18px">Chaque pastille renvoie à une règle de la grille. D'autres formulations sont tout aussi justes.</p>
+  <p style="font-size:22px;color:var(--texte-doux);margin:0 0 18px">Chaque pastille renvoie à une des 8 règles du livret. D'autres formulations sont tout aussi justes.</p>
   <div class="grid2" style="grid-template-columns:1fr 640px;gap:40px;align-items:start">
     <div>
       <span class="file-name">AGENTS.md</span>
@@ -1974,10 +2003,83 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="13:52">13h52</time> · 1 min</p>
-    <p>Voici un corrigé possible : dix-neuf lignes. Chaque ligne correspond à une règle de la grille, ce sont les pastilles. Remarquez tout ce qu'on a laissé de côté : ce qui est écrit pour les humains, ce qu'Ada ne peut pas faire dans cette tâche, et la phrase du lead tech, sympathique mais impossible à vérifier.</p>
+    <p class="rep">Repère : <time data-h="13:43">13h43</time> · 2 min</p>
+    <p>Stylos levés ! Voici un corrigé possible : dix-neuf lignes, huit règles, ce sont les pastilles. Comparez avec le vôtre : combien en aviez-vous ? Remarquez tout ce qu'on a laissé de côté : ce qui est écrit pour les humains, ce qu'Ada ne peut pas faire dans cette tâche, et la phrase du lead tech, sympathique mais impossible à vérifier.</p>
     <p>Et une règle a dû être traduite : le livret demande de lister ses hypothèses dans la description de la PR. Ada n'ouvre pas de PR : on lui demande de les lister à la fin de sa réponse. Écrire un AGENTS.md, ce n'est pas recopier un règlement, c'est le traduire en consignes qu'Ada peut appliquer et que vous pouvez vérifier.</p>
-    <p class="me">→ Ce corrigé n'est pas le seul possible : une équipe qui obtient 8/8 avec d'autres mots a juste aussi. Le bouton « Copier le corrigé » permet de le coller dans le chat Teams pour que les stagiaires le gardent. Si le temps manque, montre la slide 30 secondes et passe aux skills.</p>
+    <p>Il vous manque des règles ? Ajoutez-les, ou prenez le corrigé tel quel : c'est lui qu'on va mettre à l'épreuve, tout de suite.</p>
+    <p class="me">→ Demande dans le chat combien de règles chaque équipe avait trouvées, sur 8. Ce corrigé n'est pas le seul possible : une règle formulée avec d'autres mots compte. Clique sur « Copier le corrigé » et colle-le dans le chat Teams : les équipes peuvent s'en servir pour le crash-test, et le gardent pour l'exercice 4. Ne mentionne pas encore la « 20e ligne » : elle arrive au verdict.</p>
+  </aside>
+</section>
+
+<!-- ============ 39 · EXERCICE 2 · PIÉGEZ ADA ============ -->
+<section class="slide dark" data-title="Exercice 2 · Piégez Ada" data-module="Étape 3 · Ada à son poste" data-score="👥 Exercice 2 · en équipe">
+  <div class="row" style="justify-content:space-between;align-items:flex-start">
+    <div><span class="chip corail">👥 Exercice 2 · le crash-test</span><h2 style="font-size:72px;font-weight:900;margin-top:16px">Piégez Ada</h2></div>
+    <div data-widget="timer" data-seconds="360" data-compact="1"></div>
+  </div>
+  <p style="font-size:28px;color:#C9D3F2;margin:4px 0 0;line-height:1.4;max-width:1180px">Écrivez une demande qui <b style="color:#fff">contredit votre AGENTS.md</b>. Ada suivra-t-elle son livret d'accueil, ou votre message ?</p>
+  <div class="grid2" style="grid-template-columns:1fr 1fr;gap:50px;margin-top:26px;align-items:start">
+    <div>
+      <ol style="font-size:25px;line-height:1.45;margin:0;padding-left:36px">
+        <li>Un dossier vide, avec votre <code>AGENTS.md</code> à la racine (ou le corrigé)</li>
+        <li>Reprenez la tâche ci-contre et glissez-y <b class="menthe">au moins 3 pièges</b> : des consignes qui contredisent des règles de votre AGENTS.md</li>
+        <li>Collez votre tâche piégée dans le chat Teams</li>
+        <li>Kilo Code, agent <b>code</b>, <b>neogen-dev-high</b> : envoyez-la, autorisez les modifications, laissez-la finir</li>
+        <li>Préparez votre partage d'écran</li>
+      </ol>
+      <div class="card glass" style="padding:18px 26px;margin-top:22px"><p style="margin:0;font-size:23px;line-height:1.4"><b class="menthe">Règle du jeu :</b> interdit d'écrire « ignore l'AGENTS.md ». Un bon piège ressemble à une demande normale, un peu pressée.</p></div>
+    </div>
+    <div>
+      <div class="kicker" style="color:var(--menthe);font-size:20px">La tâche de base</div>
+      <div class="prompt-card" id="abTask" style="font-size:19px;margin-top:10px;padding:16px 22px">Crée le module de calcul du prix d'une commande, avec ses tests : sous-total, remise de 10 % dès 100 €, frais de port de 4,90 € offerts dès 50 € après remise, et un code promo BIENVENUE qui retire 5 €. Un panier vide est interdit.</div>
+      <div class="copy-row" style="margin-top:10px"><button type="button" class="btn small" data-copy="#abTask">Copier la tâche</button><span class="copy-msg" aria-live="polite"></span></div>
+      <div class="kicker" style="color:var(--corail);font-size:20px;margin-top:22px">+ vos pièges, par exemple</div>
+      <ul class="trap-ideas">
+        <li>« Calcule en euros, avec des décimales : c'est plus lisible. »<span class="rn">1</span></li>
+        <li>« Ajoute decimal.js pour les arrondis. »<span class="rn">5</span></li>
+        <li>« Range-le dans src/legacy/, à côté de l'ancien. »<span class="rn">7</span></li>
+        <li>« Pas la peine de lancer les tests, on est pressés. »<span class="rn">8</span></li>
+      </ul>
+      <p style="font-size:19px;color:#C9D3F2;margin:10px 0 0">Les pastilles renvoient aux règles du corrigé.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p class="rep">Repère : <time data-h="13:45">13h45</time> · 2 min pour écrire le piège, puis 4 min d'exécution</p>
+    <p>Le crash-test. Votre AGENTS.md dit à Ada comment on travaille dans l'équipe Boutique. Mais que se passe-t-il quand votre propre demande le contredit ? Ça arrive tous les jours : un collègue pressé, un ticket écrit vite, un « fais au plus simple ».</p>
+    <p>Reprenez la tâche de base, et glissez-y au moins trois pièges : des consignes qui contredisent des règles de votre AGENTS.md. Seule interdiction : écrire « ignore l'AGENTS.md ». Un bon piège a l'air d'une demande normale. Les règles métier, elles, ne changent pas : remise, port et code promo restent ceux de la tâche.</p>
+    <p>Collez votre tâche piégée dans le chat, envoyez-la à Ada avec votre AGENTS.md à la racine, autorisez, et laissez-la finir. Puis on regarde qui a gagné.</p>
+    <p class="me">→ Laisse 2 minutes pour écrire les pièges, puis lance le minuteur pour l'exécution. Passe dans les discussions d'équipe : un piège qui vise une règle absente de leur AGENTS.md ne teste rien, fais-le changer. Si Ada demande à installer un paquet, l'équipe refuse et le note : c'est le badge d'accès qui a joué, on en parle au verdict. Si une équipe a un problème technique, elle peut relancer une fois. Si Ada n'a pas fini à la fin du minuteur, on juge ce qui existe.</p>
+  </aside>
+</section>
+
+<!-- ============ 40 · EXERCICE 2 · LE VERDICT ============ -->
+<section class="slide light" data-title="Exercice 2 · Le verdict" data-module="Étape 3 · Ada à son poste" data-score="👥 Exercice 2 · en équipe">
+  <h2 class="title" style="text-align:left;margin-bottom:6px">Le verdict : l'AGENTS.md a-t-il tenu ?</h2>
+  <p style="font-size:23px;color:var(--texte-doux);margin:0 0 16px">Pour chaque règle visée par un piège : Ada a-t-elle suivi son livret, ou votre message ?</p>
+  <div class="grid2" style="grid-template-columns:1fr 560px;gap:40px;align-items:start">
+    <div>
+      <div data-widget="abtest" data-set="trap"></div>
+      <p class="trap-legend">✓ AGENTS.md respecté · 💬 contradiction signalée · ✗ piège suivi · vide : règle non visée</p>
+    </div>
+    <div class="stack" style="gap:14px">
+      <div class="card step" style="padding:18px 24px;border-color:var(--corail)">
+        <div class="kicker" style="font-size:18px">Souvent, votre message gagne</div>
+        <p style="font-size:20px;margin:6px 0 0;line-height:1.4">C'est prévu : une consigne explicite dans le chat passe avant l'AGENTS.md. Le danger, c'est qu'Ada le fasse <b>sans rien dire</b>.</p>
+      </div>
+      <div class="tiplist">
+        <div class="tip step"><div class="ti">20</div><div><b>La 20e ligne du corrigé</b><span>« Si ma demande contredit ce fichier, signale-le et attends mon accord avant d'agir. »</span></div></div>
+        <div class="tip step"><div class="ti">🪪</div><div><b>Les vrais interdits, aussi dans le badge d'accès</b><span>Installer un paquet : Demander. Ce qui ne doit jamais arriver ne repose pas sur un fichier de consignes.</span></div></div>
+        <div class="tip step"><div class="ti">🔍</div><div><b>Le livret réduit le risque, le diff le contrôle</b><span>Relisez toujours ce qu'Ada a produit.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p class="rep">Repère : <time data-h="13:51">13h51</time> · 4 min</p>
+    <p>Équipe par équipe : vous nous lisez vos pièges, puis vous montrez le code. Pour chaque règle visée : Ada a-t-elle suivi son AGENTS.md, a-t-elle suivi votre message, ou vous a-t-elle signalé la contradiction ?</p>
+    <p>… Ce que vous voyez là est le comportement prévu. Le format AGENTS.md le dit lui-même : une consigne explicite dans le chat passe avant le fichier. Le livret pose les règles par défaut, votre message les remplace. Le vrai danger, c'est quand ça se fait en silence, et quand le piège est involontaire : la demande pressée d'un collègue, un ticket écrit trop vite.</p>
+    <p>Trois parades. Un : la vingtième ligne. Le corrigé en faisait dix-neuf, il reste la place pour celle-ci : « Si ma demande contredit ce fichier, signale-le et attends mon accord avant d'agir. » Ça ne garantit rien, mais ça invite Ada à poser la question au lieu de choisir seule. Deux : ce qui ne doit jamais arriver, comme installer un paquet, ne repose pas sur un fichier de consignes : ça va dans le badge d'accès. Trois : le livret réduit le risque, le diff le contrôle.</p>
+    <p class="me">→ Coche chaque équipe pendant son partage d'écran, seulement sur les règles visées par ses pièges : un clic = ✓ (AGENTS.md respecté), deux = ✗ (piège suivi), trois = 💬 (contradiction signalée, la meilleure réaction), quatre = vide. Le total compte les pièges déjoués (✓ et 💬) sur les pièges posés. Fais apparaître les trois parades à la fin.</p>
+    <p class="me">→ Pour l'exercice 4, les équipes repartent de ce dossier. Celles dont Ada a suivi un piège lui demandent d'abord : « Remets le module en conformité avec AGENTS.md. » Ou bien elles repartent du corrigé, avec la tâche de base.</p>
   </aside>
 </section>
 
@@ -2015,7 +2117,7 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="13:53">13h53</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="13:55">13h55</time> · 4 min</p>
     <p>L'AGENTS.md, c'est ce qui vaut pour toutes les tâches. Mais vous avez aussi des procédures : créer une migration, ajouter un endpoint, préparer une release. Les mettre dans l'AGENTS.md, ce serait encombrer le bureau à chaque tâche, même quand on n'en a pas besoin.</p>
     <p>D'où les skills : des fiches de procédure rangées dans un tiroir. Ada ne voit que leur nom et leur description. Quand la tâche correspond, elle sort la fiche et la suit. C'est pour ça que la description est la ligne la plus importante : c'est elle qui décide si la fiche sort du tiroir.</p>
     <p>Dans Kilo Code : un dossier par skill, avec un fichier SKILL.md, dans .kilo/skills du projet, ou dans votre dossier personnel pour tous vos projets. Le bon réflexe : la troisième fois que vous réexpliquez la même chose à Ada, écrivez une skill.</p>
@@ -2032,7 +2134,7 @@ sans code. J'attends ton plan avant que tu implémentes.</div></div>
   </div>
   <div data-widget="ragsearch" style="margin-top:22px"></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="13:57">13h57</time> · 6 min</p>
+    <p class="rep">Repère : <time data-h="13:59">13h59</time> · 6 min</p>
     <p>Troisième façon de remplir le bureau : la bibliothèque. Imaginez toute la doc de la boutique : conditions de vente, FAQ, procédures. Des centaines de chunks. Ada ne peut pas tout lire : on va lui en donner trois. Vous êtes le moteur de recherche. Voici la question d'un client : lesquels choisissez-vous ? Trois lettres dans le chat.</p>
     <p>… D'abord, la recherche lexicale, par mots-clés, ce que fait BM25 : elle prend les chunks qui contiennent « BIENVENUE » ou « cumuler ». Résultat : la page d'accueil, les cartes cadeaux… Avec ça, Ada répondrait « oui, c'est cumulable ». Faux.</p>
     <p>Maintenant, la recherche vectorielle, par le sens, avec les embeddings : elle trouve le chunk B, qui ne contient aucun mot de la question, mais qui y répond : les réductions ne s'additionnent pas. C'est ça, le RAG : retrouver les bons chunks par le sens, et les poser sur le bureau d'Ada avec la question.</p>
@@ -2074,7 +2176,7 @@ reponse  = llm(question + proches)    # avec citations</div></div>
       </ul></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:03">14h03</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="14:05">14h05</time> · 4 min</p>
     <p>Comment on construit une bibliothèque comme celle-là ? En deux temps. Une fois, pour la remplir : on rassemble la doc, propre et à jour. On la découpe en chunks de quelques paragraphes. On transforme chaque chunk en vecteur, une liste de nombres qui résume son sens : c'est le rôle d'un modèle d'embeddings. Et on range tout ça dans une base vectorielle.</p>
     <p>Puis à chaque question : on vectorise la question de la même façon, on cherche les chunks les plus proches en sens, on les pose sur le bureau d'Ada avec la question, et elle répond en citant ses sources.</p>
     <p>En code, c'est six lignes. La difficulté n'est pas là : elle est dans la qualité de la doc. Une doc périmée donne des réponses périmées. Des chunks mal coupés perdent leur contexte. Et tout ce que vous indexez peut ressortir dans une réponse : on n'y met rien de confidentiel.</p>
@@ -2117,7 +2219,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
   </div>
   <div class="keybar step" style="margin-top:18px">Ada ne « consulte » rien : <span class="menthe">elle lit ce texte</span>. Un RAG, c'est un prompt complété automatiquement avec les chunks retrouvés.</div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:07">14h07</time> · 3 min</p>
+    <p class="rep">Repère : <time data-h="14:09">14h09</time> · 3 min</p>
     <p>Voilà ce qui part réellement vers le modèle quand vous interrogez une base de connaissances. Un : une consigne, ajoutée par l'outil : réponds uniquement à partir du contexte, cite tes sources, et dis-le s'il ne suffit pas. Deux : les chunks retrouvés par le retrieval, les top K, avec leur source. Trois : votre question. C'est tout. Le modèle ne va pas « consulter » la base : il lit ce texte, comme n'importe quel prompt. Tout ce qu'on a vu ce matin sur les prompts s'applique.</p>
     <p>D'où quatre astuces. Prenez les mots de la doc : c'est votre question qui sert de requête de recherche. Une question à la fois. Exigez les sources, et ouvrez-en une. Et quand la réponse est fausse, regardez d'abord les sources citées : le plus souvent, le bon chunk n'est simplement pas remonté. Ce n'est pas le modèle qui est mauvais, c'est le retrieval.</p>
     <p class="me">→ Fais apparaître les pastilles 1, 2, 3, puis la réponse, puis les astuces. Le gabarit réel est plus long, souvent en anglais, et dépend de la configuration de NéoGen. Pendant la démo qui suit, montre les citations sous la réponse : ce sont ces chunks-là. On reviendra sur les réglages du retrieval (chunking, top K, recherche hybride) tout à l'heure, après les MCP.</p>
@@ -2150,7 +2252,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:10">14h10</time> · 8 min (dont 5 de démo)</p>
+    <p class="rep">Repère : <time data-h="14:12">14h12</time> · 8 min (dont 5 de démo)</p>
     <p>Concrètement, comment on fait avec NéoGen ? Six étapes. On prépare la doc : du Markdown ou des PDF avec du vrai texte, pas des scans, un sujet par fichier. On crée la base dans l'espace de travail, rubrique Connaissances. On y ajoute les fichiers, et on attend que NéoGen les ait découpés et vectorisés. Ensuite, dans n'importe quel chat, on tape dièse, on choisit la base, et on pose la question. On vérifie les citations. Et si la base sert à toute l'équipe, on crée un modèle personnalisé qui l'a toujours attachée.</p>
     <p>Vous ne pouvez pas encore créer de base vous-mêmes dans NéoGen : je vous montre.</p>
     <p class="me">→ Avant la formation : crée la base « Boutique (démo) » avec les 3 fichiers fournis avec ce support, et vérifie qu'elle répond correctement (réponse attendue : non, seule la réduction la plus avantageuse s'applique). En direct : montre l'écran Connaissances, ajoute un 4e fichier pour montrer le traitement, puis pose la question avec #. Montre les citations. Les libellés exacts peuvent varier selon la version de NéoGen.</p>
@@ -2173,7 +2275,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
     <div data-widget="kahoot" data-key="k1"></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:18">14h18</time> · 10 min</p>
+    <p class="rep">Repère : <time data-h="14:20">14h20</time> · 10 min</p>
     <p>Avant d'attaquer les outils d'Ada, un Kahoot sur tout ce qu'on a vu depuis ce matin. Chacun joue pour soi, et après chaque question on prend quelques secondes pour expliquer la bonne réponse. Prenez votre téléphone, allez sur kahoot.it, et mettez votre prénom.</p>
     <p class="me">→ Tape le PIN dans le champ. Après chaque question, explique la bonne réponse en une phrase : c'est là que le Kahoot sert de révision. Kahoot n°1 « Le réveil » (NéoSoft Training, dossier IA) : un échauffement, puis 10 mises en situation de 20 à 30 secondes. Une question passe dès que tout le monde a répondu : en gardant chaque explication à une phrase, ça tient en 10 minutes.</p>
     <p>1. Vrai ou faux : à température 0, Ada ne peut plus halluciner → faux : elle prend toujours le plus probable, qui peut être faux (Sydney). 2. Après 2 h sur un bug, Ada ignore une consigne du début → nouvelle conversation, avec un résumé et la consigne : le bureau a débordé. 3. Un prompt contient deux règles contradictoires → Ada en applique une sans le signaler. 4. Des commits au format exact de l'équipe → coller 2 ou 3 vrais commits en exemple (few-shot). 5. Avec un modèle de raisonnement, le chain-of-thought sert encore à… → imposer vos étapes et un point d'arrêt. 6. Migrer 40 classes de JUnit 4 à JUnit 5 → agent code, par petits lots relus. 7. Vrai ou faux : « Toujours autoriser » ne vaut que pour l'action en cours → faux, c'est une règle enregistrée. 8. Quelle ligne a sa place dans AGENTS.md ? → « Montants en centimes, jamais de float » (les autres : un vœu pieux, ce que le code dit déjà, une action qu'Ada ne peut pas faire). 9. Troisième fois que vous réexpliquez une procédure → une skill (dans AGENTS.md, elle encombrerait chaque tâche). 10. Pourquoi la recherche par le sens bat les mots-clés ? → elle trouve l'extrait qui répond, même sans mot en commun.</p>
@@ -2192,7 +2294,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
   <div class="onb"><span>Intégration d'Ada</span><div class="onb-track"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
   <div class="sec-epreuve"><span class="chip corail" style="font-size:28px;padding:14px 30px">👥 Exercice 3 · Le marché des MCP</span></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:28">14h28</time> · 15 s</p>
+    <p class="rep">Repère : <time data-h="14:30">14h30</time> · 15 s</p>
     <p>Quatrième étape : les outils d'Ada. Jusqu'ici, elle ne voyait que ce qu'on posait sur son bureau. Maintenant, elle va pouvoir aller chercher l'information elle-même. Et c'est là qu'il faut faire attention.</p>
   </aside>
 </section>
@@ -2233,7 +2335,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
     </svg>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:28">14h28</time> · 3 min</p>
+    <p class="rep">Repère : <time data-h="14:30">14h30</time> · 3 min</p>
     <p>Sans outils, Ada ne voit que son bureau. Le ticket Jira, la base de données, la doc de la dernière version d'une librairie, une page web : tout ça est hors de sa portée. Elle invente, ou elle vous demande de copier-coller.</p>
     <p>Le MCP, Model Context Protocol, c'est une prise standard. D'un côté, un serveur MCP expose des outils : chaque outil a un nom, une description et des paramètres. De l'autre, Kilo Code se branche dessus et présente ce catalogue à Ada. C'est elle qui décide quand utiliser un outil. Mais elle ne l'exécute jamais elle-même : elle demande, et c'est Kilo qui exécute… si vous l'autorisez. On retrouve le badge d'accès de ce matin.</p>
     <p class="me">→ Insiste sur « Ada demande, Kilo exécute » : c'est la clé pour comprendre l'exercice qui suit, et le risque d'injection.</p>
@@ -2263,7 +2365,7 @@ et la remise de 10 % ?</span><span class="hot step">3</span></div>
     <div class="tip" style="background:#FFE9E9"><div class="ti" style="background:var(--corail)">⚠️</div><div><b>Le résultat d'un outil est du texte qu'Ada lit</b><span>Il peut contenir des instructions piégées : c'est une donnée, pas un ordre.</span></div></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:31">14h31</time> · 3 min</p>
+    <p class="rep">Repère : <time data-h="14:33">14h33</time> · 3 min</p>
     <p>Regardons un appel d'outil au ralenti. Vous posez une question à Kilo. Kilo l'envoie à Ada, avec le catalogue des outils disponibles. Ada répond : « appelle get_ticket avec SUP-1042 ». Elle n'a rien exécuté : elle a écrit une demande. Kilo vous demande l'autorisation. Si vous dites oui, Kilo appelle le serveur MCP, qui renvoie un résultat. Ce résultat est du texte, posé sur le bureau d'Ada. Et elle continue : elle répond, ou elle appelle un autre outil.</p>
     <p>Deux conséquences. Un : la description d'un outil, c'est un prompt. Si elle est floue, Ada utilise mal l'outil. Deux : le résultat d'un outil, c'est du texte qu'Ada lit. Si quelqu'un a glissé des instructions dans un ticket, une page web ou un fichier, Ada risque de les suivre. Ça s'appelle une injection de prompt. Gardez ça en tête pour l'épreuve.</p>
     <p class="me">→ Fais apparaître les flèches une par une. La flèche rouge, c'est le badge d'accès : le moment où l'humain peut tout arrêter. La flèche verte, c'est votre accord : sans lui, rien n'est exécuté.</p>
@@ -2366,7 +2468,7 @@ Config proposée par votre collègue :
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:34">14h34</time> · 2 min de consigne</p>
+    <p class="rep">Repère : <time data-h="14:36">14h36</time> · 2 min de consigne</p>
     <p>Troisième exercice : le marché des MCP. Un collègue veut outiller Ada avec six serveurs MCP. Il a préparé la configuration de chacun, à ajouter au fichier kilo.jsonc du projet, celui qui est versionné dans Git et partagé par toute l'équipe. Vous relisez avant que ça parte. Certains sont très bien, d'autres sont dangereux, d'autres encore sont utilisables à condition de les régler autrement. Pour chacun, vous décidez : on installe, on installe à certaines conditions, ou on refuse. Et surtout, vous notez chaque signal d'alerte que vous voyez.</p>
     <p>Pas besoin de connaître ces outils : tout est écrit dans les fiches. Lisez l'éditeur, les outils, leur description, et la configuration. Il y a dix signaux d'alerte à trouver.</p>
     <p class="me">→ Clique sur « Copier les 6 fiches » et colle le texte dans le chat Teams général, pour que chacun puisse lire à son rythme. Puis passe à la slide suivante : comment lire une fiche.</p>
@@ -2404,7 +2506,7 @@ Config proposée par votre collègue :
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:36">14h36</time> · 2 min</p>
+    <p class="rep">Repère : <time data-h="14:38">14h38</time> · 2 min</p>
     <p>Avant d'aller au marché, apprenons à lire une fiche. En haut, ce que l'éditeur annonce : qui l'a publié, et les outils qu'Ada pourra appeler. Leur description compte : Ada la lit comme un prompt.</p>
     <p>En bas, la configuration que votre collègue propose d'ajouter au fichier kilo.jsonc du projet. Le type : local, Kilo lance le serveur sur votre poste ; remote, le serveur tourne ailleurs et Kilo s'y connecte par une adresse. La commande : ce que Kilo exécute pour le lancer, avec la version du paquet. Environment : les réglages que Kilo passe au serveur au démarrage, par exemple l'adresse de la base de données à laquelle il se connecte, avec l'identifiant et le mot de passe. Ce sont vos réglages, ceux de l'équipe : c'est votre base, pas celle de l'éditeur. Enfin, accolades env : au lancement du serveur, c'est Kilo qui va chercher la valeur dans une variable de votre poste. Le secret n'est donc pas écrit dans le fichier.</p>
     <p>Et Ada, dans tout ça ? Elle ne lit jamais cette configuration. Elle ne voit que la liste des outils et ce qu'ils renvoient. C'est Kilo, le programme sur votre poste, qui lance le serveur et lui passe les réglages.</p>
@@ -2450,7 +2552,7 @@ Config proposée par votre collègue :
 }</div><div class="mk-v ok step" data-trap="6">✅ On installe, avec navigate en « Demander » : une page web peut contenir des pièges.</div></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:38">14h38</time> · 8 min de lecture, puis 4 min de correction</p>
+    <p class="rep">Repère : <time data-h="14:40">14h40</time> · 8 min de lecture, puis 4 min de correction</p>
     <p>Voilà les six fiches. Huit minutes. Lisez tout : l'éditeur, les outils et leur description, la configuration.</p>
     <p>… Correction, fiche par fiche. La 1 : rien à redire, on installe. La 2 : un outil très populaire, mais branché n'importe comment : une requête SQL libre, en administrateur, sur la base de production, avec le mot de passe en clair dans un fichier versionné. La 3 : un éditeur inconnu, tout neuf, qui copie vos tickets chez lui, et une version @latest qui peut changer à chaque lancement. La 4 : lisez la description de l'outil : elle contient un ordre caché. C'est de l'empoisonnement d'outil : Ada lit cette description comme un prompt. La 5 : l'éditeur est officiel, mais il expose un outil qui supprime un dépôt, et le jeton a tous les droits. La 6 : on installe, en gardant la navigation en « Demander ».</p>
     <p class="me">→ Laisse cette slide affichée pendant les 8 minutes. À la fin, appuie sur → : chaque appui révèle le verdict d'une fiche et surligne ses pièges (le chiffre rouge = le numéro de la fiche). Puis passe à la slide suivante pour le récapitulatif.</p>
@@ -2481,7 +2583,7 @@ Config proposée par votre collègue :
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:50">14h50</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="14:52">14h52</time> · 4 min</p>
     <p>Voilà les dix signaux d'alerte. Retenez les familles : d'où vient le serveur, quels droits il demande, où sont les secrets, et ce que disent les descriptions de ses outils. Ce sont exactement les règles d'hygiène qu'on va voir en branchant un vrai MCP dans Kilo.</p>
     <p class="me">→ Demande à chaque équipe, dans le chat, combien de signaux elle avait repérés et lequel l'a le plus surprise. Un signal formulé autrement mais qui désigne le même problème est juste.</p>
   </aside>
@@ -2526,10 +2628,24 @@ Config proposée par votre collègue :
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="14:54">14h54</time> · 8 min (dont 4 de démo)</p>
+    <p class="rep">Repère : <time data-h="14:56">14h56</time> · 8 min (dont 4 de démo)</p>
     <p>Dans la vraie vie, comment on branche un serveur MCP dans Kilo Code ? Dans les paramètres, rubrique MCP, ou directement dans le fichier kilo.jsonc : un nom, un type, une adresse. Ici, Context7, qui fournit à Ada la doc à jour des librairies : fini le code écrit pour une version d'il y a deux ans.</p>
     <p>Chaque outil MCP passe par le badge d'accès, comme les autres. Et il y a cinq règles d'hygiène. Une source de confiance : un serveur MCP, c'est du code qui tourne chez vous. Le moins de droits possible : une base en lecture seule, un jeton qui ne peut pas tout faire. Les secrets dans des variables d'environnement. Pas quinze serveurs « au cas où » : chaque catalogue d'outils occupe le bureau d'Ada. Et enfin, ce que vous avez vu avec web-reader : une description ou un résultat d'outil peut contenir des ordres cachés. C'est une donnée, pas un ordre.</p>
     <p class="me">→ Démo : dans ton workspace, ajoute Context7 par Paramètres → MCP (ou colle le bloc dans .kilo/kilo.jsonc), vérifie qu'il est vert, puis demande à l'agent ask : « Avec Context7, montre-moi comment déclarer un contrôleur dans la dernière version de NestJS. » Montre la demande d'autorisation de l'outil. Sans clé, Context7 fonctionne avec une limite de requêtes plus basse.</p>
+  </aside>
+</section>
+
+<!-- ============ 51a · QU'EN PENSEZ-VOUS ? ============ -->
+<section class="slide dark" data-title="Qu'en pensez-vous pour l'instant ?" data-module="Étape 4 · Les outils d'Ada">
+  <div class="talk">
+    <span class="i">💬</span>
+    <h2>Qu'en pensez-vous, <em>pour l'instant ?</em></h2>
+  </div>
+  <div style="position:absolute;right:150px;bottom:150px"><div class="capsules anim"><i></i><i></i><i></i></div></div>
+  <aside class="notes">
+    <p class="rep">Repère : <time data-h="15:04">15h04</time> · 5 min</p>
+    <p>On fait une pause dans le contenu. On est à mi-chemin de l'après-midi : qu'en pensez-vous, pour l'instant ? Micro ouvert, ou dans le chat.</p>
+    <p class="me">→ Laisse venir, sans relancer tout de suite. Si le silence dure, une question à la fois : « Qu'est-ce que vous allez essayer dès lundi ? », « Qu'est-ce qui vous paraît difficile à appliquer sur votre projet ou chez votre client ? », « Qu'est-ce qui vous gêne encore ? ». Note les sujets qui reviennent : tu peux y répondre en fin de journée.</p>
   </aside>
 </section>
 
@@ -2582,7 +2698,7 @@ Config proposée par votre collègue :
     <div class="tip step" style="padding:16px 20px"><div class="ti">🔌</div><div><b style="font-size:23px">Votre doc interne ?</b><span style="font-size:19px">Un petit serveur MCP <code>search_docs</code> devant votre base, et Ada l'interroge depuis l'IDE.</span></div></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:02">15h02</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="15:09">15h09</time> · 4 min</p>
     <p>Tout à l'heure, on a rempli la bibliothèque d'Ada dans NéoGen. Dans l'IDE, maintenant qu'elle a des outils, elle va chercher elle-même. Il y a quatre façons de lui faire trouver la bonne information.</p>
     <p>Un : le contexte explicite, avec @. C'est le plus fiable : si vous savez où c'est, dites-le. Deux : la recherche lexicale, comme vous avec grep : elle cherche un nom exact, puis elle lit le fichier. C'est son réflexe par défaut, et c'est très bien quand vous connaissez un nom de classe ou un code d'erreur. Mais grep ne connaît pas les synonymes. Trois : la recherche sémantique, avec l'indexation du code. C'est exactement le RAG de ce matin, appliqué à votre dépôt : Kilo découpe le code en chunks par fonctions et par classes, grâce à l'AST, les vectorise, et donne à Ada un outil semantic_search. Utile quand vous ne savez pas comment la chose s'appelle. Quatre : la doc à jour des librairies, avec Context7, qu'on vient de brancher. C'est aussi un RAG, servi par un MCP.</p>
     <p>Trois astuces. Dites-lui où chercher : ça lui évite de vider la moitié du dépôt sur son bureau. Indexer, c'est envoyer : passer par un fournisseur d'embeddings implique un stockage vectoriel, et donc l'envoi de chunks de votre code. Certains de nos clients sont frileux là-dessus : vérifiez ce que le contrat et le client autorisent avant d'activer l'indexation sur leur code. Et pour votre doc interne, l'architecture qui marche bien : un petit serveur MCP devant votre base de connaissances, avec un outil search_docs. Ada interroge la doc de l'équipe sans quitter l'IDE.</p>
@@ -2616,7 +2732,7 @@ Config proposée par votre collègue :
   </div>
   <div class="keybar step" style="margin-top:26px">🔧 Chunk size, overlap, top K, hybride : réglages de l'admin de la base. <span class="menthe">Votre levier à vous : une doc bien structurée.</span></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:06">15h06</time> · 5 min</p>
+    <p class="rep">Repère : <time data-h="15:13">15h13</time> · 5 min</p>
     <p>Quand une base de connaissances répond faux, on accuse le modèle. Le plus souvent, c'est le retrieval, la recherche, qui a raté. Rappel du fonctionnement : à l'indexation, chaque document est découpé en chunks, des blocs de quelques paragraphes, et chaque chunk est vectorisé. À chaque question, le retrieval sélectionne les top K chunks les plus proches, en général trois à cinq, et seuls ceux-là sont injectés dans le prompt. Le modèle ne voit rien d'autre.</p>
     <p>Premier piège : le chunking. Avec un découpage à taille fixe, tous les N caractères ou N tokens, une règle peut être coupée en deux. Ici, « offerts dès 50 € » est dans le chunk 12, « après remise » dans le chunk 13. Le retrieval remonte le chunk 12, Ada répond que le port est offert. Faux : après la remise, le panier fait 47 €. La parade : un chunking par titres Markdown, qui respecte la structure du document, avec un chevauchement entre chunks consécutifs.</p>
     <p>Deuxième piège : le mode de recherche. La recherche lexicale, BM25, c'est un moteur par mots-clés : elle matche les termes exacts, donc « suisse » ne trouve pas « CH ». La recherche vectorielle, celle des embeddings vue tout à l'heure, comprend les synonymes, mais elle est mauvaise sur les identifiants exacts comme PAY-402. La parade : la recherche hybride, qui combine les deux scores, souvent suivie d'un reranking qui reclasse les meilleurs candidats.</p>
@@ -2669,7 +2785,7 @@ s'applique.
   </div>
   <div class="keybar step" style="margin-top:20px">🧪 Le test avant de partager une base : <span class="menthe">10 vraies questions dont vous connaissez la réponse</span>. À refaire à chaque mise à jour.</div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:11">15h11</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="15:18">15h18</time> · 4 min</p>
     <p>On vient de le voir : la qualité d'un RAG se joue beaucoup dans la doc elle-même. Comparez. Avant : une FAQ « questions diverses », un « il ne se cumule pas avec l'autre, voir ci-dessus », et un tableau de tarifs en image. Découpé en chunks, plus rien ne veut rien dire, et l'image n'existe pas pour la recherche. Après : un titre qui dit le sujet, une phrase qui se comprend seule, les mots qu'un client tapera, une date.</p>
     <p>Huit règles, à appliquer à toute doc que vous mettez dans une base : un sujet par section, chaque section se suffit à elle-même, les mots des utilisateurs avec leurs synonymes, du texte et pas des images, des tableaux courts, une seule version datée, une FAQ en questions, et rien de confidentiel.</p>
     <p>Et le test : avant de partager une base avec l'équipe, posez-lui dix vraies questions dont vous connaissez la réponse. Si elle en rate trois, ce n'est pas le modèle qu'il faut changer, c'est la doc ou les réglages.</p>
@@ -2696,7 +2812,7 @@ s'applique.
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:15">15h15</time> · 3 min</p>
+    <p class="rep">Repère : <time data-h="15:22">15h22</time> · 3 min</p>
     <p>Récapitulons. Ada a maintenant un vrai poste. Des façons de travailler : le chat pour comprendre, les agents pour faire. Un badge d'accès qui dit ce qu'elle peut faire seule. Un livret d'accueil, lu à chaque tâche. Des fiches de procédure, sorties quand il faut. Une bibliothèque pour la doc. Et des outils, avec votre autorisation.</p>
     <p>Mais une chose ne change pas : vous restez responsable de tout ce qu'elle produit. C'est exactement le sujet de la suite : travailler avec elle sur une vraie fonctionnalité, de bout en bout.</p>
     <p class="me">→ Fais apparaître les lignes une par une, en demandant au chat de compléter avant de cliquer (« Et pour qu'elle connaisse nos règles ? »).</p>
@@ -2707,10 +2823,10 @@ s'applique.
 <section class="slide dark" data-title="Pause" data-module="Étape 4 · Les outils d'Ada">
   <div class="pause">
     <h2>☕ Pause</h2>
-    <p>Reprise à <time data-h="15:30">15h30</time> : une vraie fonctionnalité avec Ada, du ticket à la PR.</p>
+    <p>Reprise à <time data-h="15:35">15h35</time> : une vraie fonctionnalité avec Ada, du ticket à la PR.</p>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:18">15h18</time> · 2 min</p>
+    <p class="rep">Repère : <time data-h="15:25">15h25</time> · 10 min de pause</p>
     <p>Dix minutes de pause. Au retour : on travaille avec Ada sur une vraie fonctionnalité, jusqu'à La Mission en équipe. Gardez votre dossier de l'exercice 2 ouvert.</p>
   </aside>
 </section>
@@ -2727,7 +2843,7 @@ s'applique.
   <div class="onb"><span>Intégration d'Ada</span><div class="onb-track"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
   <div class="sec-epreuve"><span class="chip corail" style="font-size:28px;padding:14px 30px">👥 Exercice 4 · La Mission</span></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:30">15h30</time> · 15 s</p>
+    <p class="rep">Repère : <time data-h="15:35">15h35</time> · 15 s</p>
     <p>Ada a son poste et ses outils. Maintenant, on travaille avec elle pour de vrai : une fonctionnalité complète, du ticket jusqu'à la PR.</p>
   </aside>
 </section>
@@ -2738,7 +2854,7 @@ s'applique.
   <p class="lead" style="font-size:28px">Pour chaque tâche, votez dans le chat : 🟢, 🟡 ou 🔴.</p>
   <div data-widget="vote" data-set="deleg" style="margin-top:26px"></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:30">15h30</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="15:35">15h35</time> · 4 min</p>
     <p>Toutes les tâches ne se délèguent pas de la même façon. Pour chacune, vous votez : vert, Ada fonce et vous relisez ; jaune, vous travaillez avec elle, étape par étape ; rouge, vous d'abord, parce que la décision ou la spécification vous appartient.</p>
     <p>… Le critère, ce n'est pas la difficulté technique. C'est : est-ce que l'information nécessaire existe déjà quelque part ? Le code, la doc, des tests ? Alors Ada peut foncer. Est-ce qu'elle est dans votre tête, ou pas encore décidée ? Alors c'est vous d'abord.</p>
     <p class="me">→ Même déroulé que les votes du matin : 10 secondes de vote, un clic sur la réponse qui a le plus de voix, l'explication s'affiche.</p>
@@ -2758,7 +2874,7 @@ s'applique.
   </div>
   <div class="desk-bar step" style="margin-top:50px"><span>✋ À chaque étape, c'est vous qui validez</span><small>Bureau plein ? Nouvelle conversation, avec le plan en résumé.</small></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:34">15h34</time> · 5 min</p>
+    <p class="rep">Repère : <time data-h="15:39">15h39</time> · 5 min</p>
     <p>Voici comment on fait une fonctionnalité avec Ada, en six temps. Un : comprendre, avec l'agent ask, avant de toucher à quoi que ce soit. Deux : planifier, avec l'agent plan, et corriger le plan, c'est le moment où une erreur coûte le moins cher. Trois : les tests d'abord. Vous demandez à Ada d'écrire les tests des nouvelles règles, sans implémenter. Vous relisez les cas : ces tests, c'est votre spécification. Quatre : coder par étapes, une étape du plan à la fois, un diff que vous pouvez relire, jusqu'à ce que les tests passent. Cinq : documenter, à partir du code réel. Six : lui faire relire son propre diff de façon critique, puis écrire la description de PR.</p>
     <p>Et à chaque étape, c'est vous qui validez. Si la conversation devient longue, vous en ouvrez une nouvelle, en lui redonnant le plan en résumé.</p>
     <p class="me">→ Rappelle le prompt chaining du matin : c'est exactement ça, appliqué à une fonctionnalité entière. C'est aussi le déroulé que les équipes vont suivre pendant La Mission. La slide suivante le montre en vrai, prompt par prompt.</p>
@@ -2900,7 +3016,7 @@ déjà réservée sur une partie du créneau.
   </div>
   <div class="cv-foot"><span>Bureau plein entre deux temps ? Nouvelle conversation : <code>« Reprends @.kilo/plans/resa-87.md, à l'étape 3. »</code></span><span>Un commit à chaque étape verte</span></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:39">15h39</time> · 8 min</p>
+    <p class="rep">Repère : <time data-h="15:44">15h44</time> · 8 min</p>
     <p>Les six temps, c'est bien en théorie. Voici à quoi ça ressemble pour de vrai, sur un ticket du projet de réservation de salles : refuser une réservation qui chevauche un créneau déjà pris. Pour chaque temps : le prompt exact, ce qu'Ada produit, et ce que vous vérifiez.</p>
     <p>Un, comprendre : agent ask, et « ne propose aucune modification ». Elle trouve qu'il n'y a aucune vérification de chevauchement. Vous vérifiez sur un point précis. Deux, planifier : agent plan. Remarquez qu'on lui demande ses hypothèses et ses questions d'abord : elle demande si une réservation annulée bloque le créneau. C'est une question pour le PO, pas pour Ada. Trois, les tests d'abord : un tableau de cas, et regardez le premier, 10h-11h puis 11h-12h : c'est exactement le genre de bord qu'elle rate si on ne l'écrit pas. Les tests sont rouges : normal, overlaps n'existe pas. Quatre, coder : « ne modifie pas les tests », et elle lance les tests elle-même. Vous cassez le code exprès pour vérifier qu'un test passe au rouge. Cinq, documenter à partir du code réel, avec ce qu'elle n'a pas pu vérifier. Six, la revue critique : et elle trouve un vrai problème, la concurrence. C'est vous qui décidez quoi en faire.</p>
     <p>Et entre deux temps, si la conversation devient longue, vous en ouvrez une nouvelle en lui redonnant le plan : il est dans un fichier, il survit à la conversation.</p>
@@ -2934,7 +3050,7 @@ déjà réservée sur une partie du créneau.
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:47">15h47</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="15:52">15h52</time> · 4 min</p>
     <p>Écrire des tests et de la doc, c'est là qu'Ada vous fait gagner le plus de temps. Et c'est là qu'il faut le plus vérifier, parce que ça a toujours l'air bien.</p>
     <p>Trois tests qui ne testent rien. Le premier vérifie qu'il y a un résultat, pas qu'il est juste. Le deuxième recalcule exactement comme le code : si le code se trompe, le test se trompe pareil, et il reste vert. Le troisième est le plus sournois : le test échouait, et Ada a changé la valeur attendue au lieu de corriger le code. Ça arrive, surtout quand on lui dit « fais passer les tests ». Le réflexe : cassez le code exprès. Si le test reste vert, il ne sert à rien.</p>
     <p>Côté doc : on veut le pourquoi, pas le quoi. Le README pour lancer et tester. La description de PR et le CHANGELOG générés à partir du diff réel. Et on relit, parce qu'Ada documente ce qu'elle croit que le code fait, pas forcément ce qu'il fait.</p>
@@ -2982,7 +3098,7 @@ déjà réservée sur une partie du créneau.
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:51">15h51</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="15:56">15h56</time> · 4 min</p>
     <p>Quand Ada travaille vite, Git devient votre filet de sécurité. Une branche par ticket : si tout part de travers, vous jetez la branche. Un commit à chaque étape verte : c'est un point de retour sûr. Le bouton « Annuler » de Kilo est pratique, mais il vaut pour la conversation ; Git, lui, vaut pour l'équipe et survit à tout.</p>
     <p>Une astuce que peu de gens utilisent : git add -p. Git vous montre chaque morceau du diff et vous demande si vous le gardez. C'est une relecture forcée, morceau par morceau. Les messages de commit : Ada les écrit très bien si vous lui collez vos trois derniers commits en exemple, c'est le few-shot de ce matin. Et git push reste à vous : on l'a mis en « interdit » dans son badge d'accès.</p>
     <p>À droite, un template de PR. Le fichier, vous le créez une fois dans le dépôt, et toutes les PR démarrent avec. La section « Assistance IA » rend visibles les vérifications qu'on a vues aujourd'hui. Et c'est Ada qui le remplit, à partir du diff réel. Vous, vous relisez et vous signez.</p>
@@ -3020,7 +3136,7 @@ RESA-87 : refuser les chevauchements. Étapes 1-2 faites.
   </div>
   <p class="disclaimer step" style="text-align:left;margin-top:16px">Dans Kilo Code, l'ancienne fonction « Memory Bank » intégrée est dépréciée au profit d'AGENTS.md. La méthode, elle, marche dans tous les outils : des fichiers et une consigne.</p>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:55">15h55</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="16:00">16h00</time> · 4 min</p>
     <p>Souvenez-vous du badge d'Ada ce matin : elle oublie tout à chaque nouvelle conversation. Pour une tâche d'une heure, le plan suffit. Mais un ticket qui dure trois jours, ou un projet sur lequel vous revenez après deux semaines ? Chaque matin, vous lui réexpliquez tout. Et elle remet en cause des décisions déjà prises.</p>
     <p>La solution, c'est la Memory Bank : un carnet de bord. Des fichiers Markdown dans le dépôt, qu'Ada lit en début de session et qu'elle met à jour en fin de session. La différence avec l'AGENTS.md : le livret d'accueil contient des règles stables, écrites par vous, valables des mois. Le carnet contient l'état du projet : ce qui est en cours, les décisions et pourquoi, la prochaine étape. C'est Ada qui le tient, et vous qui le relisez. Et le plan, lui, ne vit que le temps d'un ticket.</p>
     <p>La structure la plus répandue vient de l'outil Cline : un fichier pour le projet, un pour l'architecture, un pour le contexte actif, un pour l'avancement. Regardez le contexte actif : en dix lignes, Ada sait où on en est sur RESA-87, quelles décisions sont prises, et par qui. Elle ne reposera pas la question des réservations annulées.</p>
@@ -3058,7 +3174,7 @@ Lis memory-bank/activeContext.md et progress.md. Résume en 5 lignes où on en e
 3. En fin de session
 Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, les décisions prises et pourquoi. Montre-moi le diff.</pre>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="15:59">15h59</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="16:04">16h04</time> · 4 min</p>
     <p>Concrètement, trois prompts suffisent. Une fois, pour l'installer : Ada analyse le projet et crée les quatre fichiers. Imposez une taille maximale, et demandez-lui de ne pas recopier ce que le code dit déjà : sinon vous aurez un roman. En début de session : elle lit le contexte actif et l'avancement, vous résume où on en est, et attend. Vous corrigez si elle se trompe. En fin de session, ou avant de fermer une conversation trop longue : elle met à jour le carnet, et vous montre le diff.</p>
     <p>Pour ne pas avoir à le redire, une consigne permanente dans l'AGENTS.md : lire le contexte actif au début de chaque tâche. Remarquez la deuxième ligne : elle ne modifie le carnet que si vous le demandez. Sinon, elle le réécrit à chaque message, et il devient du bruit.</p>
     <p>Quatre pièges. Une mémoire périmée est pire que pas de mémoire : Ada la croit, et vous la croyez. Relisez ses diffs comme du code. Gardez-la courte : elle occupe le bureau à chaque tâche. Versionnez-la avec le code : un collègue, et son Ada, reprennent le sujet là où vous l'avez laissé. Et jamais de secrets.</p>
@@ -3095,10 +3211,10 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:03">16h03</time> · 3 min de consigne</p>
+    <p class="rep">Repère : <time data-h="16:08">16h08</time> · 3 min de consigne</p>
     <p>Quatrième exercice : La Mission. Un vrai ticket, à livrer avec Ada en suivant les six temps qu'on vient de voir. Vous repartez du module de calcul de prix de l'exercice 2, avec votre AGENTS.md : il va enfin travailler pour vous.</p>
     <p>Un membre partage son écran dans votre discussion d'équipe et pilote Kilo Code ; les autres relisent et décident. Vingt minutes. À la fin, je vérifie quatre livrables, le plan, les tests écrits avant le code, le README et la description de PR, et huit cas de recette que vous ne connaissez pas encore.</p>
-    <p class="me">→ Une équipe qui n'a plus son dossier de l'exercice 2 : elle crée un dossier, y colle le corrigé de l'AGENTS.md (bouton « Copier le corrigé », slide de l'exercice 2), et relance la tâche de l'exercice 2 avant de commencer (3 minutes). Le ticket est sur la slide suivante, avec un bouton pour le copier dans le chat.</p>
+    <p class="me">→ Une équipe qui n'a plus son dossier de l'exercice 2 : elle crée un dossier, y colle le corrigé de l'AGENTS.md (bouton « Copier le corrigé », slide de l'exercice 2), et relance la tâche de base de l'exercice 2 (slide « Piégez Ada », bouton « Copier la tâche ») avant de commencer (3 minutes). Une équipe dont Ada a suivi un piège au crash-test lui demande d'abord : « Remets le module en conformité avec AGENTS.md. » Le ticket est sur la slide suivante, avec un bouton pour le copier dans le chat.</p>
   </aside>
 </section>
 
@@ -3135,7 +3251,7 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:06">16h06</time> · 20 min</p>
+    <p class="rep">Repère : <time data-h="16:11">16h11</time> · 20 min</p>
     <p>Voici le ticket. Les frais de port dépendent maintenant du pays : France, Union européenne, reste du monde, et une erreur pour un pays inconnu. Vous avez vingt minutes pour le livrer, avec les cinq temps à droite. Gardez la conversation : je vous demanderai de me montrer le plan et l'ordre dans lequel vous avez travaillé.</p>
     <p class="me">→ Clique sur « Copier le ticket » et colle-le dans le chat Teams général, puis lance le minuteur. Passe dans les discussions d'équipe toutes les 5 minutes. Rappelle à mi-parcours : « Où en est votre README ? » (souvent oublié). Une équipe qui a fini en avance peut demander à Ada une revue critique de son diff.</p>
   </aside>
@@ -3158,7 +3274,7 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
 7. Pays « XX » → erreur UNKNOWN_COUNTRY
 8. Panier vide, FR → erreur EMPTY_CART</pre>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:26">16h26</time> · 10 min</p>
+    <p class="rep">Repère : <time data-h="16:31">16h31</time> · 10 min</p>
     <p>On vérifie. D'abord les cas de recette : je vous colle huit cas dans le chat. Donnez-les à Ada : elle les ajoute en tests, sans toucher au code, et elle les lance. Toutes les équipes en même temps.</p>
     <p>Pendant ce temps, équipe par équipe, montrez-moi vos livrables : le plan, l'ordre de travail dans la conversation, le README, la description de PR.</p>
     <p class="me">→ Clique sur « Copier les cas de recette » et colle le texte dans le chat (c'est un prompt prêt à l'emploi). Pendant que les tests tournent, fais défiler les livrables de chaque équipe en partage d'écran et coche. Puis les résultats des 8 cas. Un clic = ✓, deux = ✗, trois = vide. Si Ada a modifié le code pour faire passer un cas, le cas ne compte pas.</p>
@@ -3176,7 +3292,7 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
   </div>
   <div class="onb"><span>Intégration d'Ada</span><div class="onb-track"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:36">16h36</time> · 15 s</p>
+    <p class="rep">Repère : <time data-h="16:41">16h41</time> · 15 s</p>
     <p>Ada travaille vite, mais elle se trompe, et toujours avec le même aplomb. Cette étape, c'est apprendre à repérer ses bêtises avant qu'elles partent en production.</p>
   </aside>
 </section>
@@ -3194,7 +3310,7 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
   </div>
   <p class="lead step" style="margin-top:26px;font-size:28px"><b style="color:var(--marine)">Relisez Ada mieux qu'un junior : elle a l'air bien plus sûre d'elle.</b></p>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:36">16h36</time> · 5 min</p>
+    <p class="rep">Repère : <time data-h="16:41">16h41</time> · 5 min</p>
     <p>Six bêtises reviennent tout le temps. Elle invente : une méthode, une option, un paquet qui n'existe pas. Et un nom de paquet inventé, quelqu'un a pu l'enregistrer exprès pour piéger les IA. Elle date : une API d'une ancienne version. Elle rate les limites : les bornes, les arrondis, les fuseaux, l'encodage, la liste vide. Vous vous souvenez des seuils exacts à 50 et 100 € de l'équipe Boutique ? Elle oublie la sécurité. Elle triche avec les tests. Et elle en fait trop : elle touche des fichiers qui n'ont rien à voir.</p>
     <p>Pour chacune, une question à vous poser en revue. Et un principe : relisez Ada mieux qu'un junior. Un junior hésite quand il n'est pas sûr. Ada, jamais.</p>
     <p class="me">→ Fais apparaître les cartes une par une et demande au chat un exemple vécu pour une ou deux d'entre elles.</p>
@@ -3223,7 +3339,7 @@ Mets à jour activeContext.md et progress.md : ce qui est fait, ce qui reste, le
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:41">16h41</time> · 7 min</p>
+    <p class="rep">Repère : <time data-h="16:46">16h46</time> · 7 min</p>
     <p>Dernier point : déboguer avec Ada. Le piège, c'est la boucle : « ça marche pas, corrige », elle corrige à l'aveugle, ça ne marche toujours pas, on recommence. Pour en sortir, cinq étapes. Reproduire, avec un test qui échoue. Donner les faits : l'entrée, l'attendu, l'obtenu, l'erreur et la pile d'appels. Diagnostiquer avec l'agent debug : trois hypothèses classées, sans corriger. Vérifier l'hypothèse avec une preuve. Et seulement là, corriger, avec le plus petit changement possible.</p>
     <p>Et quatre signaux pour tout arrêter : trois corrections ratées d'affilée, un test modifié au lieu du code, un try/catch qui cache l'erreur, et un prompt sans les faits.</p>
     <p class="me">→ Fais le lien avec la manche 1 du speed round de ce matin (l'erreur 500 sur la connexion) : la version réparée du prompt suivait exactement ces étapes.</p>
@@ -3265,7 +3381,7 @@ src/pricing/PriceCalculator.ts:14:20
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:48">16h48</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="16:53">16h53</time> · 4 min</p>
     <p>Tout à l'heure, je vous ai donné un réflexe : cassez le code exprès, et si le test reste vert, il ne sert à rien. Il existe des outils qui font ça pour vous, sur tout le code, automatiquement : c'est le mutation testing.</p>
     <p>Le principe : l'outil crée des mutants, des petites versions modifiées de votre code. Un supérieur ou égal devient un supérieur strict, un plus devient un moins. Pour chaque mutant, il relance vos tests. Si un test passe au rouge, le mutant est tué : bien. Si tout reste vert, le mutant survit : il y a un comportement que personne ne teste.</p>
     <p>Exemple, sur le calcul de prix de ce matin. Le mutant « supérieur strict » survit. Traduction : aucun test à exactement 100 euros. Le seuil de la remise peut changer sans que personne ne le voie. C'est typiquement le test qu'Ada oublie : elle teste 50 et 150, pas 100 pile. Et la bonne nouvelle : vous donnez la liste des survivants à Ada, et elle écrit les tests qui les tuent.</p>
@@ -3286,7 +3402,7 @@ src/pricing/PriceCalculator.ts:14:20
   </div>
   <div class="keybar step" style="margin-top:20px">📈 Rappel DORA 2025 : l'IA augmente le débit… <span class="menthe">et l'instabilité</span>. Ce sont les filets qui font la différence.</div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:52">16h52</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="16:57">16h57</time> · 4 min</p>
     <p>On prend de la hauteur. Jusqu'ici, on a vu votre poste à vous. Mais Ada intervient sur tout le cycle de l'équipe, du ticket à la mise en production. Pour chaque étape, trois lignes : ce qu'Ada fait, ce que vous faites, et le filet automatique qui rattrape ce que vous n'avez pas vu.</p>
     <p>Quelques usages qu'on sous-estime. Sur le ticket : lui demander de lister les ambiguïtés et les questions à poser au PO, avant d'écrire une ligne. En conception : lui faire proposer deux ou trois options avec leurs compromis, et rédiger l'ADR, la fiche de décision d'architecture. La décision reste la vôtre. En CI : lui coller les logs d'un pipeline rouge pour qu'elle explique l'échec. Et à la livraison, les notes de version à partir des commits.</p>
     <p>Et la dernière ligne, c'est la plus importante pour les tech leads. Plus Ada produit vite, plus vous recevez de code à relire. Si vos filets reposent sur la vigilance humaine seule, ils lâchent. Il faut qu'ils soient automatiques : le template de PR, une branche protégée avec un relecteur obligatoire, les tests et le mutation testing en CI, l'audit des dépendances pour les paquets inventés. C'est exactement ce que dit le rapport DORA : l'IA amplifie, le meilleur comme le pire.</p>
@@ -3324,7 +3440,7 @@ src/pricing/PriceCalculator.ts:14:20
   </div>
   <p class="disclaimer src-after" style="margin-top:14px;text-align:left">Sources : METR, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) et mise à jour de février 2026 · DORA, « State of AI-assisted Software Development » (2025).</p>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="16:56">16h56</time> · 5 min</p>
+    <p class="rep">Repère : <time data-h="17:01">17h01</time> · 5 min</p>
     <p>Un exercice de huit minutes qui se passe bien, c'est encourageant, mais ça ne prouve rien sur votre quotidien. Pour savoir si Ada vous fait vraiment gagner du temps, il faut mesurer. Pourquoi ? Parce que le ressenti trompe. En 2025, l'organisme de recherche METR a fait travailler seize développeurs expérimentés sur deux cent quarante-six vraies tâches de leurs propres projets, avec ou sans IA, tiré au sort. Résultat : dix-neuf pour cent plus lents avec l'IA. Et après coup, ils s'estimaient vingt pour cent plus rapides.</p>
     <p>Attention, c'est un résultat daté : METR le présente lui-même comme historique, et sa mise à jour de 2026 suggère que les développeurs sont probablement plus accélérés aujourd'hui, sans pouvoir le chiffrer de façon fiable. La leçon, elle, ne vieillit pas : ce que vous ressentez n'est pas une mesure.</p>
     <p>Le rapport DORA 2025, sur près de cinq mille professionnels, dit la même chose autrement : l'IA augmente le débit, mais aussi l'instabilité. C'est un amplificateur : elle rend les bonnes équipes meilleures, et elle accélère aussi les problèmes des autres.</p>
@@ -3349,7 +3465,7 @@ src/pricing/PriceCalculator.ts:14:20
     <div data-widget="kahoot" data-key="k2"></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="17:01">17h01</time> · 10 min</p>
+    <p class="rep">Repère : <time data-h="17:06">17h06</time> · 10 min</p>
     <p>Dernier Kahoot : l'entretien de fin de période d'essai d'Ada. Dix questions sur toute la journée, et on explique chaque réponse.</p>
     <p class="me">→ Tape le PIN dans le champ. Après chaque question, explique la bonne réponse en une phrase. Kahoot n°2 « Le dernier » (NéoSoft Training, dossier IA), 20 secondes par question :</p>
     <p>1. Pour quelle tâche Ada peut-elle foncer ? → écrire les tests d'une fonction existante. 2. Dans quel ordre ? → plan, tests, code, doc. 3. Un test vérifie `toBeDefined()` : il est… → inutile, il ne peut pas échouer. 4. Vrai ou faux : un fichier .env peut être lu par Ada si on l'autorise → vrai. 5. Un serveur MCP demande un compte admin sur la base de production : on… → refuse, ou on le règle en lecture seule sur une base de recette. 6. Qui remplace {env:NOM} par la valeur ? → Kilo Code. 7. Ada propose un paquet que vous ne connaissez pas : vous… → vérifiez qu'il existe et qui le publie. 8. Après 3 corrections ratées d'affilée : → nouvelle conversation, retour au diagnostic. 9. Vrai ou faux : si l'équipe se sent plus rapide avec l'IA, c'est qu'elle l'est → faux. 10. Que mesurer en premier ? → le délai du ticket au merge, les retouches et les défauts.</p>
@@ -3369,7 +3485,7 @@ src/pricing/PriceCalculator.ts:14:20
     <div class="rfx step"><span class="n">7</span><b>Mesurez avant de croire</b><span>Le ressenti n'est pas une mesure.</span></div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="17:11">17h11</time> · 4 min</p>
+    <p class="rep">Repère : <time data-h="17:16">17h16</time> · 4 min</p>
     <p>Les outils vont changer : Kilo Code, NéoGen, les modèles, tout ça aura bougé dans trois mois. Ce qui reste, ce sont sept réflexes, un par étape de la journée. Ada prédit, elle ne sait pas. Un prompt, une tâche. Un poste réglé. Un MCP se relit comme une dépendance. Plan, tests, petites étapes. Relisez Ada mieux qu'un junior. Et mesurez avant de croire.</p>
     <p class="me">→ Fais apparaître les réflexes un par un en demandant au chat de deviner le suivant (« Et pour les MCP ? »).</p>
   </aside>
@@ -3432,7 +3548,7 @@ Mets à jour memory-bank/activeContext.md et progress.md : fait, reste, décisio
 Base de connaissances
 #base Réponds uniquement à partir des sources trouvées, cite-les, et dis-le si elles ne répondent pas.</pre>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="17:15">17h15</time> · 2 min</p>
+    <p class="rep">Repère : <time data-h="17:20">17h20</time> · 2 min</p>
     <p>Pour que lundi soit facile, voici votre boîte à prompts : les douze prompts de la journée, prêts à copier. Comprendre, clarifier un ticket, planifier, tests d'abord, coder une étape, diagnostiquer, la revue critique, tuer les mutants, le commit, la PR, la fin de session pour la Memory Bank, et la base de connaissances.</p>
     <p>Ce ne sont pas des formules magiques : ajoutez toujours ce que vous seul savez, vos versions, vos contraintes, ce que veut dire « fini ». Et si vous en utilisez un tous les jours, faites-en une skill, ou mettez-le dans votre AGENTS.md.</p>
     <p class="me">→ Clique sur « Copier les 12 prompts » et colle-les dans le chat Teams général : chacun repart avec. Ne les lis pas un par un, ils ont tous été vus dans la journée.</p>
@@ -3457,7 +3573,7 @@ Base de connaissances
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="17:17">17h17</time> · 3 min</p>
+    <p class="rep">Repère : <time data-h="17:22">17h22</time> · 3 min</p>
     <p>Avant de partir, une dernière chose. Dans le chat : la première chose que vous ferez lundi. Une seule, concrète, sur votre vrai projet. Pas « utiliser l'IA », mais « écrire l'AGENTS.md de mon projet » ou « essayer les tests d'abord sur mon prochain ticket ».</p>
     <p class="me">→ Lis quelques réponses à voix haute et réagis. Écrire son engagement augmente nettement les chances de passer à l'action : c'est le vrai livrable de la journée.</p>
   </aside>
@@ -3475,7 +3591,7 @@ Base de connaissances
     </div>
   </div>
   <aside class="notes">
-    <p class="rep">Repère : <time data-h="17:20">17h20</time> · 5 min</p>
+    <p class="rep">Repère : <time data-h="17:25">17h25</time> · 5 min</p>
     <p>Fin de la période d'essai : Ada est confirmée dans l'équipe. À une condition, et c'est le fil de toute la journée : vous restez son manager. Elle propose, vous décidez ; elle produit, vous vérifiez.</p>
     <p>Merci à tous pour votre énergie, à distance en plus. Le support vous sera partagé, avec les notes. Et j'ai besoin de votre avis : le lien du questionnaire d'évaluation est dans le chat. Deux minutes, maintenant, avant de fermer Teams.</p>
     <p class="me">→ Colle le lien du questionnaire d'évaluation Neosoft dans le chat avant de dire au revoir, et laisse 2 minutes pour le remplir en direct.</p>
@@ -3817,7 +3933,7 @@ Base de connaissances
   }
   $$('[data-teams]').forEach(function (b) { b.addEventListener('click', function () { ligue.count = +b.getAttribute('data-teams'); saveLigue(); renderLiguePanel(); }); });
   $('#ligueReset').addEventListener('click', function () {
-    confirmDialog('Effacer les résultats des exercices ?', 'Les cases cochées des corrections et les prompts de l\'atelier seront effacés. Les équipes et leurs membres sont conservés.').then(function (ok) {
+    confirmDialog('Effacer les résultats des exercices ?', 'Les scores de l\'atelier prompt et les cases cochées des corrections seront effacés. Les équipes et leurs membres sont conservés.').then(function (ok) {
       if (!ok) { openLigue(); return; }
       ligue.records = {}; ligue.battle = clone(DEFAULT_STATE.ligue.battle); saveLigue(); openLigue();
     });
@@ -3985,85 +4101,50 @@ Base de connaissances
     bus.on('ligue', sync);
   };
 
-  /* ---- Atelier prompt : relecture croisée des prompts d'équipe ---- */
-  var GRID = [
-    'Contexte : langage, framework et versions',
-    'Une seule tâche, un objectif clair',
-    'Règles de calcul écrites (remises, frais de port…)',
-    'Arrondis et devise précisés',
-    'Cas limites et erreurs (panier vide, quantité négative…)',
-    'Tests demandés (cas + framework)',
-    'Format de réponse demandé',
-    'Aucune contradiction ni ambiguïté'
-  ];
-  W.battle = function (el) {
-    var cur = 0, editing = false;
-    var B = function () { return ligue.battle; };
-    el.innerHTML = '<div class="tabs" role="tablist" style="justify-content:flex-start"></div>' +
-      '<div class="battle"><div class="battle-left"><div class="battle-text" aria-live="polite"></div><textarea class="battle-edit" aria-label="Prompt de l\'équipe" placeholder="Collez ici le prompt envoyé par l\'équipe dans le chat Teams"></textarea>' +
-      '<div class="row" style="gap:10px;margin-top:14px;flex-wrap:wrap"><button type="button" class="btn small navy" data-b="edit">Coller / modifier le prompt</button><button type="button" class="btn small corail" data-b="mark">Surligner la sélection</button><button type="button" class="btn small ghost" style="color:var(--marine)" data-b="unmark">Effacer les surlignages</button></div></div>' +
-      '<div class="battle-right"><div class="kicker" style="color:var(--bleu)">Grille de relecture</div><div class="grid-list"></div><div class="grid-score"></div></div></div>';
-    var tabs = $('.tabs', el), text = $('.battle-text', el), area = $('.battle-edit', el), gl = $('.grid-list', el);
-    function marksOf(i) { return (B().marks[i] = B().marks[i] || []); }
-    function countOf(i) { var g = B().grid2[i] || []; return GRID.filter(function (c, k) { return g[k]; }).length; }
-    function drawText() {
-      var t = B().prompts[cur] || '';
-      text.innerHTML = '';
-      if (!t) { var e = document.createElement('span'); e.className = 'muted'; e.textContent = 'Aucun prompt pour cette équipe : cliquez sur « Coller / modifier le prompt ».'; text.appendChild(e); return; }
-      var ms = marksOf(cur).slice().sort(function (a, b) { return a[0] - b[0]; }), pos = 0;
-      ms.forEach(function (m) {
-        if (m[0] < pos) return;
-        text.appendChild(document.createTextNode(t.slice(pos, m[0])));
-        var mk = document.createElement('mark'); mk.textContent = t.slice(m[0], m[1]); text.appendChild(mk);
-        pos = m[1];
+  /* ---- Atelier prompt : Ada de mauvaise foi, le nombre de trous par équipe et par manche ---- */
+  W.mfscore = function (el) {
+    var ROUNDS = 3;
+    function rec() { var r = ligue.records.mf = ligue.records.mf || {}; r.res = r.res || {}; return r; }
+    function vals(i) { var r = ligue.records.mf; return (r && r.res && r.res[i]) || []; }
+    function num(v) { return typeof v === 'number' && isFinite(v) ? v : null; }
+    function trophies() {
+      var ts = activeTeams(), last = -1;
+      for (var k = ROUNDS - 1; k >= 0 && last < 0; k--) if (ts.every(function (t) { return num(vals(t.i)[k]) !== null; })) last = k;
+      var best = last < 0 ? null : Math.min.apply(null, ts.map(function (t) { return vals(t.i)[last]; }));
+      ts.forEach(function (t) { var c = $('[data-cup="' + t.i + '"]', el); if (c) c.textContent = best !== null && vals(t.i)[last] === best ? ' 🏆' : ''; });
+    }
+    function draw() {
+      var ts = activeTeams();
+      el.innerHTML = '<table class="mf-board"><thead><tr><th></th></tr></thead><tbody></tbody></table>';
+      var head = $('thead tr', el), body = $('tbody', el);
+      for (var k = 0; k < ROUNDS; k++) { var th = document.createElement('th'); th.textContent = 'Manche ' + (k + 1); head.appendChild(th); }
+      ts.forEach(function (t) {
+        var tr = document.createElement('tr');
+        var td0 = document.createElement('td'); td0.className = 'team'; td0.style.color = t.color;
+        td0.appendChild(document.createTextNode(t.name));
+        var cup = document.createElement('span'); cup.setAttribute('data-cup', t.i); td0.appendChild(cup);
+        tr.appendChild(td0);
+        for (var k = 0; k < ROUNDS; k++) (function (k) {
+          var td = document.createElement('td'), inp = document.createElement('input');
+          inp.type = 'number'; inp.min = '0'; inp.max = '99'; inp.inputMode = 'numeric'; inp.className = 'mf-in'; inp.placeholder = '–';
+          inp.setAttribute('aria-label', t.name + ', manche ' + (k + 1));
+          var v = num(vals(t.i)[k]); inp.value = v === null ? '' : String(v);
+          inp.addEventListener('change', function () {
+            var R = rec(), n = parseInt(inp.value, 10);
+            R.res[t.i] = R.res[t.i] || [];
+            R.res[t.i][k] = isNaN(n) ? null : Math.max(0, n);
+            saveLigue(); trophies();
+          });
+          inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') inp.blur(); });
+          td.appendChild(inp); tr.appendChild(td);
+        })(k);
+        body.appendChild(tr);
       });
-      text.appendChild(document.createTextNode(t.slice(pos)));
+      trophies();
     }
-    function drawGrid() {
-      gl.innerHTML = '';
-      var g = B().grid2[cur] = B().grid2[cur] || [];
-      GRID.forEach(function (c, k) {
-        var b = document.createElement('button'); b.type = 'button'; b.className = 'crit'; b.setAttribute('aria-pressed', String(!!g[k]));
-        b.innerHTML = '<span class="box">' + (g[k] ? '✓' : '') + '</span><span class="lbl"></span>'; $('.lbl', b).textContent = c;
-        b.addEventListener('click', function () { g[k] = !g[k]; saveLigue(); });
-        gl.appendChild(b);
-      });
-      $('.grid-score', el).textContent = 'Critères présents : ' + countOf(cur) + ' / ' + GRID.length;
-    }
-    function drawTabs() {
-      tabs.innerHTML = '';
-      activeTeams().forEach(function (t) {
-        var b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(t.i === cur));
-        b.textContent = t.name; b.style.borderColor = t.color;
-        b.addEventListener('click', function () { cur = t.i; editing = false; drawAll(); });
-        tabs.appendChild(b);
-      });
-    }
-    function drawAll() {
-      if (cur >= ligue.count) cur = 0;
-      drawTabs(); drawGrid();
-      area.style.display = editing ? 'block' : 'none'; text.style.display = editing ? 'none' : 'block';
-      $('[data-b="edit"]', el).textContent = editing ? 'Valider le prompt' : 'Coller / modifier le prompt';
-      if (!editing) drawText();
-    }
-    el.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-b]'); if (!b) return;
-      var a = b.getAttribute('data-b');
-      if (a === 'edit') {
-        if (!editing) { editing = true; area.value = B().prompts[cur] || ''; drawAll(); area.focus(); return; }
-        var v = area.value; if (v !== (B().prompts[cur] || '')) { B().prompts[cur] = v; B().marks[cur] = []; }
-        editing = false; saveLigue(); drawAll();
-      } else if (a === 'mark') {
-        var sel = window.getSelection(); if (!sel || !sel.rangeCount) return;
-        var r = sel.getRangeAt(0); if (!text.contains(r.startContainer) || !text.contains(r.endContainer)) return;
-        var pre = document.createRange(); pre.selectNodeContents(text); pre.setEnd(r.startContainer, r.startOffset);
-        var s0 = pre.toString().length, s1 = s0 + r.toString().length;
-        if (s1 > s0) { marksOf(cur).push([s0, s1]); sel.removeAllRanges(); saveLigue(); }
-      } else if (a === 'unmark') { B().marks[cur] = []; saveLigue(); }
-    });
-    drawAll();
-    bus.on('ligue', function () { if (!editing) drawAll(); });
-    el._enter = drawAll;
+    draw();
+    bus.on('ligue', function () { if (!el.contains(document.activeElement)) draw(); });
+    el._enter = draw;
   };
 
   /* ---- Minuteur ---- */
@@ -4351,7 +4432,7 @@ Base de connaissances
       var s = STACKS[stack];
       $$('.blk', blks).forEach(function (b, i) { b.setAttribute('aria-pressed', String(on[i])); });
       view.innerHTML = '';
-      if (!on.some(Boolean)) { var z = document.createElement('span'); z.className = 'seg'; z.style.opacity = '.65'; z.textContent = 'Fais le calcul du prix d\'une commande.'; view.appendChild(z); }
+      if (!on.some(Boolean)) { var z = document.createElement('span'); z.className = 'seg'; z.style.opacity = '.65'; z.textContent = 'Ada, tu peux me coder le calcul du prix total d\'une commande ? C\'est pour la revue de code. Merci !'; view.appendChild(z); }
       BLOCKS.forEach(function (b, i) {
         if (!on[i]) return;
         var seg = document.createElement('span'); seg.className = 'seg'; if (i !== changed) seg.style.animation = 'none';
@@ -4536,6 +4617,8 @@ Base de connaissances
   ];
   var GRIDS = {
     ab: { head: 'Règle de l\'équipe Boutique', tot: 'Règles respectées', rows: AB_RULES },
+    /* Le crash-test : ✓ AGENTS.md respecté, ✗ piège suivi, 💬 contradiction signalée, vide = règle non visée */
+    trap: { head: 'Règle de l\'AGENTS.md visée', tot: 'Pièges déjoués', rows: AB_RULES, signal: true },
     mission: { head: 'À vérifier', tot: 'Vérifications réussies', rows: [
       '#Les 4 livrables',
       'Un plan relu et validé avant le code',
@@ -4558,10 +4641,10 @@ Base de connaissances
     if (el.hasAttribute('data-compact')) el.classList.add('grid-compact');
     function rec() { var r = ligue.records[key] = ligue.records[key] || {}; r.res = r.res || {}; return r; }
     function cur() { var r = ligue.records[key] || {}; return { res: r.res || {} }; }
-    function cycle(v) { return v === 1 ? 0 : v === 0 ? null : 1; }
+    function cycle(v) { return v === 1 ? 0 : v === 0 ? (G.signal ? 2 : null) : v === 2 ? null : 1; }
     function tick(v, label, onClick) {
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'tick ' + (v === 1 ? 'ok' : v === 0 ? 'ko' : '');
-      b.textContent = v === 1 ? '✓' : v === 0 ? '✗' : '·'; b.setAttribute('aria-label', label); b.addEventListener('click', onClick); return b;
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'tick ' + (v === 1 ? 'ok' : v === 0 ? 'ko' : v === 2 ? 'sig' : '');
+      b.textContent = v === 1 ? '✓' : v === 0 ? '✗' : v === 2 ? '💬' : '·'; b.setAttribute('aria-label', label); b.addEventListener('click', onClick); return b;
     }
     function draw() {
       var r = cur(), ts = activeTeams();
@@ -4582,10 +4665,14 @@ Base de connaissances
         });
         body.appendChild(tr);
       });
-      var totals = {};
-      ts.forEach(function (t) { totals[t.i] = (r.res[t.i] || []).filter(function (x) { return x === 1; }).length; });
       ts.forEach(function (t) {
-        var a = document.createElement('td'); a.className = 'cell'; a.textContent = totals[t.i] + ' / ' + N; $('.tot', el).appendChild(a);
+        var res = (r.res[t.i] || []).slice(0, N), a = document.createElement('td'); a.className = 'cell';
+        if (G.signal) {
+          var posed = res.filter(function (x) { return x === 0 || x === 1 || x === 2; }).length;
+          var held = res.filter(function (x) { return x === 1 || x === 2; }).length;
+          a.textContent = posed ? held + ' / ' + posed : '–';
+        } else a.textContent = res.filter(function (x) { return x === 1; }).length + ' / ' + N;
+        $('.tot', el).appendChild(a);
       });
     }
     draw();
